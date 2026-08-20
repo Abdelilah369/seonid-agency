@@ -1,0 +1,214 @@
+const en = {
+  nav: {
+    services: "Services",
+    process: "How We Work",
+    about: "About",
+    blog: "Resources",
+    contact: "Contact",
+    freeAudit: "Free Audit",
+  },
+  footer: {
+    tagline: "Website design and SEO, built as one system. Based in Morocco, working internationally.",
+    agency: "Agency",
+    resources: "Resources",
+    getInTouch: "Get in touch",
+    blog: "Blog",
+    freeAudit: "Free Audit",
+    contact: "Contact",
+    rights: "All rights reserved.",
+    location: "Casablanca, Morocco — working worldwide",
+  },
+  home: {
+    meta: {
+      title: "SEONID AGENCY — Websites and Growth, Built on Evidence",
+      description:
+        "A one-person growth consultancy building websites and SEO as one system, for businesses that need to be found, not just online. Based in Morocco, working internationally.",
+    },
+    heroEyebrow: "Website design + SEO, as one system",
+    heroHeadline: "We build websites the way we research them.",
+    heroSubhead:
+      "SEONID is a one-person growth consultancy for businesses that need a website that gets found — not one that just exists. Every build starts with real research into what actually works in your market, not a template pulled off a shelf.",
+    heroCtaPrimary: "Get Your Free Website & SEO Audit",
+    heroCtaSecondary: "See how we work →",
+    processHeadline: "Research, build, grow — in that order, every time.",
+    process: [
+      {
+        n: "01",
+        title: "Research",
+        body: "We study what the best — and worst — sites in your market actually do before writing a line of copy. It's the same method behind this site: a weighted, evidence-based benchmark, not a hunch.",
+      },
+      {
+        n: "02",
+        title: "Build",
+        body: "One system, not two vendors. Design, copy, and SEO structure get built together from the first wireframe, in the language your customers actually search in.",
+      },
+      {
+        n: "03",
+        title: "Grow",
+        body: "Launch isn't the finish line. Every site ships with a technical SEO pass, schema markup, and a content plan for the months after.",
+      },
+    ],
+    proofHeadline: "We don't guess. We benchmark.",
+    proofBody:
+      "Before we designed anything — including this page — we ran a weighted competitive study across a dozen web design and growth agencies in Morocco/MENA and internationally: scoring reputation, results evidence, design quality, positioning, content depth, and conversion design. The principles that came out of it are what shape every site we build.",
+    proofStats: [
+      { n: "12", l: "Agencies benchmarked" },
+      { n: "6", l: "Weighted judging criteria" },
+      { n: "2", l: "Regions compared, MENA + global" },
+    ],
+    proofLink: "Read the full methodology →",
+    servicesHeadline: "Two things, built together — not sold separately.",
+    serviceDesignTitle: "Website Design",
+    serviceDesignBody:
+      "A site built to convert, not just to look good — clear positioning, fast pages, and a structure ready for the languages your customers actually search in.",
+    serviceGrowthTitle: "SEO & Growth",
+    serviceGrowthBody:
+      "Technical SEO, schema markup, and a content plan built in from day one — not bolted on six months after launch when it's harder to fix.",
+    servicesLink: "See what's included →",
+    localHeadlinePart1: "Based in Morocco.",
+    localHeadlinePart2: "Built for anywhere.",
+    localBody:
+      "SEONID works with businesses across Morocco and the wider MENA region as well as international clients — in English, French, and Arabic.",
+    finalHeadline: "Curious what an evidence-based audit finds on your site?",
+    finalSub: "Free, no obligation, delivered within 48 hours.",
+    finalCta: "Get Your Free Website & SEO Audit",
+  },
+  services: {
+    meta: {
+      title: "Services",
+      description:
+        "Website design and SEO & growth, built together as one system — not sold as two separate vendors.",
+    },
+    eyebrow: "Services",
+    headline: "Website design and SEO, built as one system.",
+    intro:
+      "Most agencies sell you a website. A few sell you SEO. Almost none build both together from day one — which is exactly why so many good-looking sites never get found. SEONID does both, as one engagement.",
+    designTitle: "Website Design",
+    design: [
+      "Strategy & positioning — one clear sentence for who it's for and what they get",
+      "Copywriting grounded in real research, not filler text",
+      "Responsive, fast-loading build with accessibility as a default, not an add-on",
+      "Architecture ready for multiple languages, including right-to-left layouts",
+    ],
+    growthTitle: "SEO & Growth",
+    growth: [
+      "Technical SEO: site structure, metadata, sitemaps, and Core Web Vitals",
+      "Schema markup (Organization, LocalBusiness, Article) from day one",
+      "On-page content built around real search intent, not keyword stuffing",
+      "Local MENA SEO for businesses that need to be found regionally, not just globally",
+    ],
+    ctaHeadline: "See exactly where your current site stands first.",
+    cta: "Get Your Free Website & SEO Audit",
+    orText: "Or",
+    orLink: "read how we work",
+    orSuffix: "first.",
+  },
+  process: {
+    meta: {
+      title: "How We Work",
+      description: "The research method and build principles behind every SEONID site — including this one.",
+    },
+    eyebrow: "How we work",
+    headline: "The method behind every site we build.",
+    intro:
+      "Before SEONID designed a single page — including this one — we ran a weighted competitive benchmark across 12 web design and growth agencies in Morocco/MENA and internationally. This is the exact judging matrix from that research, and it's the same lens every client project gets run through.",
+    matrixHeadline: "The judging matrix",
+    criteria: [
+      { name: "Reputation & Reviews", weight: "20%", body: "Rating × real review volume across platforms — not a single perfect score with no evidence behind it." },
+      { name: "Results Evidence", weight: "20%", body: "Quantified outcomes, named clients, retention — proof, not adjectives." },
+      { name: "Design & UX Quality", weight: "15%", body: "Visual hierarchy, professionalism, and responsiveness, judged against real sites in the same market." },
+      { name: "Messaging & Positioning", weight: "15%", body: "One clear sentence: specific audience, specific outcome — not generic agency copy." },
+      { name: "Content & SEO Depth", weight: "15%", body: "Whether a site visibly practices the SEO it's selling, or just claims to." },
+      { name: "Conversion Design", weight: "15%", body: "One clear call to action, low friction, repeated — not five competing buttons." },
+    ],
+    principlesHeadline: "What that research turned into: nine build principles",
+    principlesIntro:
+      "Comparing the top-scoring agencies against the lowest-scoring ones surfaced the same patterns again and again. These are now standard on every SEONID build, in priority order.",
+    principles: [
+      "Above-the-fold formula: specific audience + specific, numeric outcome — never just \"we build websites.\"",
+      "A proof stack near the top: real review counts and headline stats, not filler claims.",
+      "Every case study is before → after → number — the design and the business result, together.",
+      "One CTA, repeated everywhere, instead of several competing ones.",
+      "A real blog or resource section, tightly on-topic — it's the first SEO asset, not an afterthought.",
+      "A de-risking offer — a free audit or no-lock-in terms — that lowers first-contact friction.",
+      "A genuine point of view in the writing, not generic agency-speak.",
+      "Bilingual or local-language support where the audience actually needs it.",
+      "Nothing published without a number or a name behind it.",
+    ],
+    ctaHeadline: "Want this same lens run against your own site?",
+    cta: "Get Your Free Website & SEO Audit",
+  },
+  about: {
+    meta: {
+      title: "About",
+      description: "SEONID is a one-person growth consultancy based in Morocco, built on research rather than volume.",
+    },
+    eyebrow: "About",
+    headline: "One person. One focus. No layers.",
+    p1: "SEONID is run by one person, on purpose. That's not a limitation to work around — it's the model. A large agency wins by out-resourcing you: more staff, more case studies, more years of accumulated reviews. A one-person shop can't win that fight, and doesn't try to. It wins by out-focusing them — fewer clients, closer attention, and no account-manager layer between the person doing the work and the person who hired them.",
+    p2: "That's also why research comes first on every project, including this site. Without ten years of case studies to lean on, the work has to earn trust a different way — by being visibly rigorous about what actually works, and honest about what doesn't apply yet.",
+    placeholder:
+      "Founded by Abdelilah Karroumi, an engineer and SEO growth consultant based in Casablanca, Morocco. SEONID was built to eliminate the gap between high-end web design and rigorous technical SEO. Instead of bloated agency layers and off-the-shelf templates, every project is directly architected, written, and optimized by one specialist using evidence-based benchmarks.",
+    ctaHeadline: "Prefer to just see the work first?",
+    cta: "Get Your Free Website & SEO Audit",
+  },
+  audit: {
+    meta: {
+      title: "Free Website & SEO Audit",
+      description: "A free, evidence-based audit of your website — technical SEO, messaging, and quick wins — delivered within 48 hours.",
+    },
+    eyebrow: "Free audit",
+    headline: "Find out what your site is actually doing.",
+    intro: "No obligation, no sales call required to get it. You'll have a written report in your inbox within 48 hours.",
+    included: [
+      { title: "Technical SEO check", body: "Site structure, metadata, sitemap, and Core Web Vitals — the fixable stuff most sites are quietly leaking traffic to." },
+      { title: "Messaging & positioning review", body: "Whether your homepage says who it's for and what they get in the first five seconds, or makes people work for it." },
+      { title: "Competitive snapshot", body: "A quick look at how you stack up against a few real competitors in your market — not a generic checklist." },
+      { title: "Three quick wins", body: "Specific, prioritized fixes you could make this week, whether or not you ever work with SEONID again." },
+    ],
+    form: {
+      name: "Name",
+      namePlaceholder: "Your name",
+      email: "Email",
+      emailPlaceholder: "you@business.com",
+      url: "Website URL",
+      urlPlaceholder: "yourbusiness.com",
+      message: "What are you hoping to fix or improve? (optional)",
+      messagePlaceholder: "e.g. traffic has stalled, site doesn't convert, launching soon and want a check before we go live…",
+      submit: "Request My Free Audit",
+      submitting: "Sending…",
+      doneTitle: "Request received.",
+      doneBody: "Your audit will land in your inbox within 48 hours.",
+      genericError: "Something went wrong. Please try again.",
+      requiredError: "Email and website URL are required.",
+      emailError: "That email address doesn't look valid.",
+    },
+  },
+  blog: {
+    meta: {
+      title: "Resources",
+      description: "SEO and website-growth writing from SEONID AGENCY — coming soon.",
+    },
+    eyebrow: "Resources",
+    headline: "The writing isn't live yet — it's next.",
+    bodyPre: "This section is reserved for SEO and website-growth research — exactly the kind of evidence-based writing described on the",
+    bodyLink: "how we work",
+    bodyPost: "page. Nothing gets published here until it's genuinely useful, not as filler to look active.",
+    cta: "Get a Free Audit in the Meantime",
+  },
+  contact: {
+    meta: {
+      title: "Contact",
+      description: "Get in touch with SEONID AGENCY.",
+    },
+    eyebrow: "Contact",
+    headline: "Tell us about the project.",
+    p1: "For a project inquiry, the fastest path is the free audit — it gives us something concrete to talk about instead of a cold introduction.",
+    p2Pre: "Prefer email directly?",
+    location: "Casablanca, Morocco — working worldwide.",
+    cta: "Get Your Free Website & SEO Audit",
+  },
+};
+
+export default en;
+export type Dictionary = typeof en;

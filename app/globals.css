@@ -43,6 +43,11 @@
   --font-body: var(--font-public-sans);
 }
 
+[dir="rtl"] {
+  --font-display: var(--font-arabic);
+  --font-body: var(--font-arabic);
+}
+
 html {
   scroll-behavior: smooth;
 }
