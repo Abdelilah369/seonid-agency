@@ -91,6 +91,13 @@ const ARTICLES_EN: Record<string, ArticleDetail> = {
   }
 };
 
+export function generateStaticParams() {
+  return [
+    { slug: "12-agency-benchmark" },
+    { slug: "moroccan-b2b-seo-gap" },
+  ];
+}
+
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/blog/[slug]">): Promise<Metadata> {

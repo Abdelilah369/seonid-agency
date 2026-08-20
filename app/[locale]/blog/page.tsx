@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
 import { getDictionary } from "@/lib/dictionaries";
