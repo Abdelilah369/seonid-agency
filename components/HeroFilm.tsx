@@ -11,24 +11,22 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#0d1814] via-[#111e19] to-bg py-24 sm:py-32 lg:py-40 text-white">
-      {/* Cinematic Ambient Atmosphere (Zero Lag, 120fps CSS GPU Accelerated) */}
+      {/* Cinematic Ambient Atmosphere with High-Resolution Studio Photography */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        {/* Soft Golden & Emerald Organic Aura */}
-        <div className="absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-[#c08a2e]/15 blur-[120px] animate-pulse" />
-        <div className="absolute top-1/3 -right-40 h-[600px] w-[600px] rounded-full bg-[#1b3d30]/35 blur-[140px]" />
-        <div className="absolute -bottom-20 left-1/3 h-[450px] w-[450px] rounded-full bg-[#c08a2e]/10 blur-[100px]" />
-        
-        {/* Subtle Luxury Architectural Grid */}
+        {/* Editorial Moroccan Agency Architectural Photography Background */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-luminosity scale-105 transition-transform duration-1000"
+          style={{ backgroundImage: "url('/images/hero-cinematic.jpg')" }}
         />
-        {/* Gradient Mask to Fade out bottom seamlessly */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+        
+        {/* Dark Emerald & Vignette Overlays for Maximum Text Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1814]/95 via-[#111e19]/90 to-[#0d1814]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-[#0d1814]/80" />
+
+        {/* Soft Golden & Emerald Organic Aura */}
+        <div className="absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-[#c08a2e]/20 blur-[120px] animate-pulse" />
+        <div className="absolute top-1/3 -right-40 h-[600px] w-[600px] rounded-full bg-[#1b3d30]/40 blur-[140px]" />
+        <div className="absolute -bottom-20 left-1/3 h-[450px] w-[450px] rounded-full bg-[#c08a2e]/15 blur-[100px]" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6">

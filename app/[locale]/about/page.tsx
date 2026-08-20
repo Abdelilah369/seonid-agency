@@ -74,6 +74,27 @@ export default async function AboutPage({
             </div>
           </div>
         </div>
+
+        {/* High-Resolution Studio Photography Visual */}
+        <div className="mt-16 overflow-hidden rounded-3xl border border-border bg-card shadow-2xl">
+          <div className="relative aspect-[21/9] w-full overflow-hidden">
+            <img
+              src="/images/hero-cinematic.jpg"
+              alt="SEONID Agency Moroccan Architectural Studio"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/20 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4 text-white">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent">Studio & Laboratory</p>
+                <p className="text-lg font-bold">Engineered in Morocco. Serving Enterprise Worldwide.</p>
+              </div>
+              <span className="rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-semibold backdrop-blur-md">
+                Casablanca · Rabat · Remote
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="border-t border-border bg-surface">
