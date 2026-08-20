@@ -34,28 +34,33 @@ export default async function BlogPage({
 
       {/* Articles Grid */}
       <div className="mt-14 grid gap-8 md:grid-cols-2">
-        {t.articles?.map((article, i) => (
-          <article
-            key={i}
-            className="flex flex-col justify-between rounded-2xl border border-border bg-surface p-7 transition-all hover:border-accent hover:shadow-sm"
-          >
-            <div>
-              <div className="flex items-center justify-between gap-2 text-[12px] font-semibold text-accent-deep">
-                <span className="rounded-full bg-accent/15 px-2.5 py-0.5">{article.tag}</span>
-                <span className="text-ink-faint">{article.readTime}</span>
+        {t.articles?.map((article, i) => {
+          const slug = i === 0 ? "12-agency-benchmark" : "moroccan-b2b-seo-gap";
+          return (
+            <Link
+              key={i}
+              href={`/${locale}/blog/${slug}`}
+              className="group flex flex-col justify-between rounded-3xl border border-border bg-surface p-7 transition-all duration-300 hover:border-accent hover:shadow-xl sm:p-8"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 text-[12px] font-semibold text-accent-deep">
+                  <span className="rounded-full bg-accent/15 px-3 py-1">{article.tag}</span>
+                  <span className="text-ink-faint">{article.readTime}</span>
+                </div>
+                <h2 className="mt-5 font-display text-[22px] font-bold leading-snug text-ink transition-colors group-hover:text-accent-deep">
+                  {article.title}
+                </h2>
+                <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
+                  {article.summary}
+                </p>
               </div>
-              <h2 className="mt-4 font-display text-[20px] font-semibold leading-snug text-ink">
-                {article.title}
-              </h2>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
-                {article.summary}
-              </p>
-            </div>
-            <div className="mt-6 border-t border-border pt-4 text-[13px] text-ink-faint">
-              {article.date} · SEONID Research
-            </div>
-          </article>
-        ))}
+              <div className="mt-8 flex items-center justify-between border-t border-border pt-4 text-[13px] text-ink-faint">
+                <span>{article.date} · SEONID Research</span>
+                <span className="font-semibold text-accent-deep transition-transform group-hover:translate-x-1">Read article →</span>
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="mt-16 rounded-2xl border border-border bg-surface p-8 text-center sm:p-10">
