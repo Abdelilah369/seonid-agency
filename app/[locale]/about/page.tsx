@@ -32,14 +32,46 @@ export default async function AboutPage({
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="max-w-[62ch] space-y-6 text-[16px] leading-relaxed text-ink-muted">
-          <p>{t.p1}</p>
-          <p>{t.p2}</p>
-          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent-deep">Founder & Consultant</p>
-            <p className="mt-3 text-[15.5px] leading-relaxed text-ink">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:items-start">
+          <div className="space-y-6 text-[16px] leading-relaxed text-ink-muted">
+            <p>{t.p1}</p>
+            <p>{t.p2}</p>
+          </div>
+
+          {/* Founder Executive Card */}
+          <div className="rounded-3xl border border-border bg-surface p-7 sm:p-8 shadow-xl">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent/15 border border-accent/30 font-display text-xl font-bold text-accent-deep">
+                AK
+              </div>
+              <div>
+                <h3 className="font-display text-[19px] font-semibold text-ink">
+                  Abdelilah Karroumi
+                </h3>
+                <p className="text-[13px] font-medium text-accent-deep">
+                  Founder & SEO Growth Consultant
+                </p>
+                <p className="text-[12px] text-ink-faint">
+                  Casablanca, Morocco · Working Globally
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-6 border-t border-border pt-5 text-[14.5px] leading-relaxed text-ink-muted">
               {t.placeholder}
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-2 pt-2 text-[11.5px] font-semibold">
+              <span className="rounded-full bg-surface-2 px-3 py-1 text-ink">
+                No Account Managers
+              </span>
+              <span className="rounded-full bg-surface-2 px-3 py-1 text-ink">
+                Direct Engineering
+              </span>
+              <span className="rounded-full bg-surface-2 px-3 py-1 text-ink">
+                12-Agency Benchmark
+              </span>
+            </div>
           </div>
         </div>
       </section>
