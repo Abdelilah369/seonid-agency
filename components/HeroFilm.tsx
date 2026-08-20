@@ -10,79 +10,113 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
   const isAr = locale === "ar";
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0d1814] via-[#111e19] to-bg py-24 sm:py-32 lg:py-40 text-white">
-      {/* Cinematic Ambient Atmosphere with High-Resolution Studio Photography */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0d1814] via-[#111e19] to-bg py-16 sm:py-24 lg:py-28 text-white">
+      {/* Background Subtle Ambient Glow (Zero Lag) */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        {/* Editorial Moroccan Agency Architectural Photography Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-luminosity scale-105 transition-transform duration-1000"
-          style={{ backgroundImage: "url('/images/hero-cinematic.jpg')" }}
-        />
-        
-        {/* Dark Emerald & Vignette Overlays for Maximum Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1814]/95 via-[#111e19]/90 to-[#0d1814]/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-[#0d1814]/80" />
-
-        {/* Soft Golden & Emerald Organic Aura */}
-        <div className="absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-[#c08a2e]/20 blur-[120px] animate-pulse" />
-        <div className="absolute top-1/3 -right-40 h-[600px] w-[600px] rounded-full bg-[#1b3d30]/40 blur-[140px]" />
-        <div className="absolute -bottom-20 left-1/3 h-[450px] w-[450px] rounded-full bg-[#c08a2e]/15 blur-[100px]" />
+        <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-[#c08a2e]/15 blur-[120px]" />
+        <div className="absolute top-1/2 -right-32 h-[550px] w-[550px] rounded-full bg-[#1b3d30]/35 blur-[140px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="max-w-3xl">
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
-            <p className="text-[12.5px] font-bold uppercase tracking-[0.1em] text-accent">
-              {t.heroEyebrow}
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          {/* Left: Master Headline & Action */}
+          <div>
+            {/* Eyebrow badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
+              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-accent">
+                {t.heroEyebrow}
+              </p>
+            </div>
+
+            {/* Master Headline */}
+            <h1 className="mt-6 text-balance font-display text-[38px] font-bold leading-[1.08] tracking-tight text-white sm:text-[52px] lg:text-[58px]">
+              {t.heroHeadline}
+            </h1>
+
+            <WovenDivider className="mt-6 max-w-[160px]" />
+
+            {/* Subheading */}
+            <p className="mt-6 max-w-[48ch] text-[16.5px] leading-relaxed text-white/85 sm:text-[18px]">
+              {t.heroSubhead}
             </p>
+
+            {/* Action CTAs */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href={`/${locale}/audit`}
+                className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-3.5 text-[15px] font-bold text-[#1a1206] shadow-xl shadow-accent/20 transition-all hover:bg-accent-deep hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>{t.heroCtaPrimary}</span>
+                <span className={isAr ? "rotate-180" : ""}>→</span>
+              </Link>
+              <Link
+                href={`/${locale}/process`}
+                className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-white/90 underline decoration-white/30 decoration-2 underline-offset-8 transition-colors hover:text-white hover:decoration-accent"
+              >
+                {t.heroCtaSecondary}
+              </Link>
+            </div>
+
+            {/* Proof Badges Bar */}
+            <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6 text-[12.5px] text-white/70">
+              <div className="flex items-center gap-2">
+                <span className="font-display text-base font-bold text-accent">12</span>
+                <span>Agencies Benchmarked</span>
+              </div>
+              <span className="text-white/20">·</span>
+              <div className="flex items-center gap-2">
+                <span className="font-display text-base font-bold text-accent">&lt;0.8s</span>
+                <span>Core Web Vitals TTFB</span>
+              </div>
+              <span className="text-white/20">·</span>
+              <div className="flex items-center gap-2">
+                <span className="font-display text-base font-bold text-accent">48h</span>
+                <span>Guaranteed SLA</span>
+              </div>
+            </div>
           </div>
 
-          {/* Master Headline */}
-          <h1 className="mt-7 text-balance font-display text-[42px] font-bold leading-[1.06] tracking-tight text-white sm:text-[60px] lg:text-[68px]">
-            {t.heroHeadline}
-          </h1>
+          {/* Right: Prominent High-Resolution Studio & Benchmark Card */}
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-3xl border border-accent/40 bg-gradient-to-br from-card via-[#12231c] to-[#0d1814] p-3 shadow-2xl backdrop-blur-xl">
+              {/* Studio Visual Preview */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="/images/hero-cinematic.jpg"
+                  alt="SEONID Agency Moroccan Architectural Studio"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1814] via-transparent to-transparent opacity-80" />
+                
+                {/* Floating Performance Score Pill */}
+                <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-black/60 px-3 py-1 text-xs font-bold text-emerald-400 backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>99 / 100 Speed Score</span>
+                </div>
 
-          <WovenDivider className="mt-8 max-w-[180px]" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90">
+                  <span className="font-mono font-bold text-accent">SEONID · Forensic Spec</span>
+                  <span className="text-[11px] text-white/60">Casablanca & Rabat</span>
+                </div>
+              </div>
 
-          {/* Subheading */}
-          <p className="mt-8 max-w-[54ch] text-[17.5px] leading-relaxed text-white/80 sm:text-[19px]">
-            {t.heroSubhead}
-          </p>
-
-          {/* Action CTAs */}
-          <div className="mt-10 flex flex-wrap items-center gap-5">
-            <Link
-              href={`/${locale}/audit`}
-              className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[15.5px] font-bold text-[#1a1206] shadow-xl shadow-accent/20 transition-all hover:bg-accent-deep hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <span>{t.heroCtaPrimary}</span>
-              <span className={isAr ? "rotate-180" : ""}>→</span>
-            </Link>
-            <Link
-              href={`/${locale}/process`}
-              className="inline-flex items-center gap-2 text-[15px] font-semibold text-white/90 underline decoration-white/30 decoration-2 underline-offset-8 transition-colors hover:text-white hover:decoration-accent"
-            >
-              {t.heroCtaSecondary}
-            </Link>
-          </div>
-
-          {/* Proof Badges Bar */}
-          <div className="mt-14 flex flex-wrap items-center gap-6 border-t border-white/10 pt-8 text-[13px] text-white/70">
-            <div className="flex items-center gap-2">
-              <span className="font-display text-lg font-bold text-accent">12</span>
-              <span>Agencies Benchmarked</span>
-            </div>
-            <span className="text-white/20">·</span>
-            <div className="flex items-center gap-2">
-              <span className="font-display text-lg font-bold text-accent">&lt;0.8s</span>
-              <span>Core Web Vitals TTFB</span>
-            </div>
-            <span className="text-white/20">·</span>
-            <div className="flex items-center gap-2">
-              <span className="font-display text-lg font-bold text-accent">48h</span>
-              <span>Guaranteed SLA</span>
+              {/* Technical Metrics Breakdown */}
+              <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
+                  <p className="font-bold text-accent text-sm">0.64s</p>
+                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">LCP Speed</p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
+                  <p className="font-bold text-emerald-400 text-sm">0.00</p>
+                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">CLS Shift</p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
+                  <p className="font-bold text-white text-sm">Next 16</p>
+                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">Turbopack</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
