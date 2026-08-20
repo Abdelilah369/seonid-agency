@@ -32,6 +32,28 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
             {t.intro}
           </p>
 
+          {/* Visual deliverable preview */}
+          <div className="mt-8 rounded-2xl border border-accent/40 bg-accent/5 p-5">
+            <div className="flex items-center justify-between text-[12px] font-semibold text-accent-deep">
+              <span>Sample Deliverable Preview</span>
+              <span className="rounded-full bg-accent/20 px-2.5 py-0.5">48h Turnaround</span>
+            </div>
+            <div className="mt-3 space-y-2 text-[13px] text-ink-muted">
+              <div className="flex items-center justify-between rounded-lg bg-surface px-3 py-2">
+                <span>Core Web Vitals & Speed Index</span>
+                <span className="font-semibold text-emerald-600">98 / 100</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg bg-surface px-3 py-2">
+                <span>Schema Markup & Search Intent</span>
+                <span className="font-semibold text-accent-deep">Full Audit</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg bg-surface px-3 py-2">
+                <span>3 Prioritized Growth Fixes</span>
+                <span className="font-semibold text-ink">Action Plan</span>
+              </div>
+            </div>
+          </div>
+
           <ul className="mt-10 space-y-6">
             {t.included.map((item) => (
               <li key={item.title}>

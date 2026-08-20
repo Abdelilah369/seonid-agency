@@ -188,15 +188,30 @@ const fr: Dictionary = {
   },
   blog: {
     meta: {
-      title: "Ressources",
-      description: "Contenus SEO et croissance de site web par SEONID AGENCY — bientôt disponibles.",
+      title: "Ressources & Études",
+      description: "Analyses SEO, ingénierie web et études fondées sur les preuves par SEONID AGENCY.",
     },
-    eyebrow: "Ressources",
-    headline: "Les contenus ne sont pas encore en ligne — mais arrivent.",
-    bodyPre: "Cette section est réservée à la recherche SEO et croissance de site — exactement le type de contenu fondé sur des preuves décrit sur la page",
-    bodyLink: "notre méthode",
-    bodyPost: "Rien ne sera publié ici tant que ce ne sera pas réellement utile, pas juste pour donner l'impression d'être actif.",
-    cta: "Obtenir un audit gratuit en attendant",
+    eyebrow: "Ressources & Études",
+    headline: "De la recherche fondée sur les preuves, pas du remplissage.",
+    intro: "Analyses approfondies, données comparatives et cadres techniques issus de nos études de marché.",
+    articles: [
+      {
+        tag: "Étude comparative",
+        title: "Le Benchmark des 12 Agences : Ce que les meilleures agences web font différemment",
+        summary: "Nous avons audité 12 agences au Maroc, dans la région MENA et à l'international selon une grille de 6 critères pondérés. Voici les 9 principes qui séparent les sites performants des simples vitrines.",
+        readTime: "6 min de lecture",
+        date: "Août 2026",
+      },
+      {
+        tag: "SEO Technique",
+        title: "Pourquoi 80% des sites B2B au Maroc échouent à générer du trafic de recherche",
+        summary: "L'anatomie du piège des deux prestataires : pourquoi séparer le design du SEO conduit à des sites lents, sans balisage Schema et sans prospects qualifiés.",
+        readTime: "8 min de lecture",
+        date: "Août 2026",
+      },
+    ],
+    ctaHeadline: "Envie d'appliquer cette même méthodologie d'audit à votre site ?",
+    cta: "Obtenez votre audit gratuit site web & SEO",
   },
   contact: {
     meta: {

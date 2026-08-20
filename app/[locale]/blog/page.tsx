@@ -20,7 +20,7 @@ export default async function BlogPage({
   const t = dict.blog;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 py-20">
       <p className="text-[13px] font-semibold uppercase tracking-[0.09em] text-accent-deep">
         {t.eyebrow}
       </p>
@@ -29,16 +29,42 @@ export default async function BlogPage({
       </h1>
       <WovenDivider className="mt-6 max-w-[140px]" />
       <p className="mt-6 max-w-[54ch] text-[15.5px] leading-relaxed text-ink-muted">
-        {t.bodyPre}{" "}
-        <a href={`/${locale}/process`} className="underline decoration-border decoration-2 underline-offset-4 hover:decoration-accent">
-          {t.bodyLink}
-        </a>{" "}
-        {t.bodyPost}
+        {t.intro}
       </p>
-      <div className="mt-9">
-        <CtaButton href={`/${locale}/audit`} variant="outline">
-          {t.cta}
-        </CtaButton>
+
+      {/* Articles Grid */}
+      <div className="mt-14 grid gap-8 md:grid-cols-2">
+        {t.articles?.map((article, i) => (
+          <article
+            key={i}
+            className="flex flex-col justify-between rounded-2xl border border-border bg-surface p-7 transition-all hover:border-accent hover:shadow-sm"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-2 text-[12px] font-semibold text-accent-deep">
+                <span className="rounded-full bg-accent/15 px-2.5 py-0.5">{article.tag}</span>
+                <span className="text-ink-faint">{article.readTime}</span>
+              </div>
+              <h2 className="mt-4 font-display text-[20px] font-semibold leading-snug text-ink">
+                {article.title}
+              </h2>
+              <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
+                {article.summary}
+              </p>
+            </div>
+            <div className="mt-6 border-t border-border pt-4 text-[13px] text-ink-faint">
+              {article.date} · SEONID Research
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-16 rounded-2xl border border-border bg-surface p-8 text-center sm:p-10">
+        <h3 className="font-display text-[22px] font-semibold text-ink">
+          {t.ctaHeadline}
+        </h3>
+        <div className="mt-6 flex justify-center">
+          <CtaButton href={`/${locale}/audit`}>{t.cta}</CtaButton>
+        </div>
       </div>
     </section>
   );

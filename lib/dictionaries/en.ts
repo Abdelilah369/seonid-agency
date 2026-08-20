@@ -186,15 +186,30 @@ const en = {
   },
   blog: {
     meta: {
-      title: "Resources",
-      description: "SEO and website-growth writing from SEONID AGENCY — coming soon.",
+      title: "Resources & Research",
+      description: "Evidence-based SEO, web engineering, and growth teardowns by SEONID AGENCY.",
     },
-    eyebrow: "Resources",
-    headline: "The writing isn't live yet — it's next.",
-    bodyPre: "This section is reserved for SEO and website-growth research — exactly the kind of evidence-based writing described on the",
-    bodyLink: "how we work",
-    bodyPost: "page. Nothing gets published here until it's genuinely useful, not as filler to look active.",
-    cta: "Get a Free Audit in the Meantime",
+    eyebrow: "Resources & Research",
+    headline: "Evidence-based research, not agency filler.",
+    intro: "Rigorous teardowns, benchmark data, and technical SEO frameworks from our competitive studies.",
+    articles: [
+      {
+        tag: "Benchmark Study",
+        title: "The 12-Agency Benchmark: What Top MENA & Global Web Agencies Do Differently",
+        summary: "We audited 12 agencies across Morocco, MENA, and international markets against a 6-factor weighted scorecard. Here are the 9 principles that separate high-growth sites from pretty brochures.",
+        readTime: "6 min read",
+        date: "August 2026",
+      },
+      {
+        tag: "Technical SEO",
+        title: "Why 80% of Moroccan B2B Websites Fail at Search Engine Growth",
+        summary: "Anatomy of the two-vendor trap: why buying design from one agency and bolting on SEO later results in slow load times, missing JSON-LD schema, and zero high-intent organic leads.",
+        readTime: "8 min read",
+        date: "August 2026",
+      },
+    ],
+    ctaHeadline: "Want this exact benchmark methodology run against your site?",
+    cta: "Get Your Free Website & SEO Audit",
   },
   contact: {
     meta: {
