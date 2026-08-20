@@ -31,7 +31,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
             </div>
 
             {/* Master Headline */}
-            <h1 className="mt-6 text-balance font-display text-[38px] font-bold leading-[1.08] tracking-tight text-white sm:text-[52px] lg:text-[58px]">
+            <h1 className="mt-6 text-balance font-display text-[30px] sm:text-[46px] lg:text-[56px] font-bold leading-[1.12] tracking-tight text-white">
               {t.heroHeadline}
             </h1>
 
