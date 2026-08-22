@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
+import SiteHealthScorecard from "@/components/SiteHealthScorecard";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 
@@ -94,6 +95,9 @@ export default async function AboutPage({
               </span>
             </div>
           </div>
+        </div>
+        <div className="mt-8">
+          <SiteHealthScorecard locale={locale} />
         </div>
       </section>
 
