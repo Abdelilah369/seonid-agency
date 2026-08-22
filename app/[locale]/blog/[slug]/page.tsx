@@ -91,11 +91,10 @@ const ARTICLES_EN: Record<string, ArticleDetail> = {
   }
 };
 
+export const articleSlugs = Object.keys(ARTICLES_EN);
+
 export function generateStaticParams() {
-  return [
-    { slug: "12-agency-benchmark" },
-    { slug: "moroccan-b2b-seo-gap" },
-  ];
+  return articleSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

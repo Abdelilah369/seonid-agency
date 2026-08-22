@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
+import LuxuryPricingCalculator from "@/components/LuxuryPricingCalculator";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 
@@ -132,6 +133,11 @@ export default async function ServicesPage({
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* Investment Calculator */}
+          <div className="mt-14">
+            <LuxuryPricingCalculator locale={locale} />
           </div>
 
           {/* Audit CTA Card */}
