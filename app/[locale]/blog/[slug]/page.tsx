@@ -122,8 +122,49 @@ export default async function BlogPostPage({
   const isAr = locale === "ar";
   const isFr = locale === "fr";
 
+  const baseUrl = "https://seonid.agency";
+  const pageUrl = `${baseUrl}/${locale}/blog/${slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.summary,
+    url: pageUrl,
+    inLanguage: locale,
+    datePublished: article.date,
+    author: {
+      "@type": "Person",
+      name: "Abdelilah Karroumi",
+      jobTitle: "Founder & SEO Growth Consultant",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SEONID AGENCY",
+      url: baseUrl,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${baseUrl}/${locale}/blog` },
+      { "@type": "ListItem", position: 3, name: article.title, item: pageUrl },
+    ],
+  };
+
   return (
     <article className="mx-auto max-w-4xl px-6 pt-16 pb-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Back Link */}
       <Link
         href={`/${locale}/blog`}
