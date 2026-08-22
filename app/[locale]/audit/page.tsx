@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
 import AuditForm from "@/components/AuditForm";
-import AuditDeliverableMockup from "@/components/AuditDeliverableMockup";
+import LiveAuditScanner from "@/components/LiveAuditScanner";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 
@@ -38,7 +38,7 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
       <div className="mt-14 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:items-start">
         {/* Left: Rich Visual Deliverable Showcase */}
         <div>
-          <AuditDeliverableMockup locale={locale} />
+          <LiveAuditScanner locale={locale} />
         </div>
 
         {/* Right: Request Form Container */}
