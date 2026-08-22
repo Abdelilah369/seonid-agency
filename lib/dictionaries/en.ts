@@ -223,6 +223,24 @@ const en = {
     location: "Casablanca, Morocco — working worldwide.",
     cta: "Get Your Free Website & SEO Audit",
   },
+  geo: {
+    meta: {
+      title: "GEO — AI Search Visibility",
+      description: "Generative Engine Optimization: getting cited by ChatGPT, Perplexity, and Google AI Overviews — not just ranked on page one.",
+    },
+    eyebrow: "New capability",
+    headline: "Get cited by AI. Not just ranked by Google.",
+    intro: "In 2026, roughly 20–30% of B2B searches now pass through an AI system — ChatGPT, Perplexity, Google AI Overviews — before they ever reach a search engine results page. Ranking #1 on Google means less than it used to if the AI answer above it never mentions you.",
+    whatHeadline: "What GEO actually is",
+    whatBody: "Generative Engine Optimization structures your content so language models can lift a clean, accurate, citable claim from it — specific numbers, clear entity definitions, question-shaped headings, and machine-readable structured data. It's a different skill from classic keyword SEO, and most agencies still only do the old one.",
+    diffHeadline: "Why we don't just claim it",
+    diffBody: "Several Moroccan agencies now market GEO services. Almost none publish evidence they're actually cited anywhere. Our position is the same one behind everything else on this site: don't assert it, prove it. Every technical page on seonid.agency ships with the structured data (Article, BreadcrumbList, Organization schema) that GEO depends on — you can check this page's own source right now.",
+    trackingHeadline: "Our own citation log",
+    trackingBody: "We track whether seonid.agency gets cited by ChatGPT, Perplexity, and Google AI Overviews for queries relevant to our own market, and we publish what we find here — good or bad. This log started the day this page shipped, so it's short. That's the point: real evidence starts small and grows, unlike a claim, which starts fully formed and stays unverifiable.",
+    trackingEmpty: "No verified citations logged yet. Check back — entries get added the moment one is confirmed, not before.",
+    ctaHeadline: "Want a GEO readiness check alongside your technical audit?",
+    cta: "Get Your Free Website & SEO Audit",
+  },
 };
 
 export default en;

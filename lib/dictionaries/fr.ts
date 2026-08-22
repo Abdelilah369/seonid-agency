@@ -225,6 +225,24 @@ const fr: Dictionary = {
     location: "Casablanca, Maroc — active dans le monde entier.",
     cta: "Obtenez votre audit gratuit site web & SEO",
   },
+  geo: {
+    meta: {
+      title: "GEO — Visibilité dans la recherche IA",
+      description: "Generative Engine Optimization : être cité par ChatGPT, Perplexity et Google AI Overviews — pas seulement classé en première page.",
+    },
+    eyebrow: "Nouvelle capacité",
+    headline: "Soyez cité par l'IA. Pas seulement classé par Google.",
+    intro: "En 2026, environ 20 à 30 % des recherches B2B passent désormais par un système d'IA — ChatGPT, Perplexity, Google AI Overviews — avant même d'atteindre une page de résultats de recherche. Être numéro 1 sur Google compte moins qu'avant si la réponse IA au-dessus ne vous mentionne jamais.",
+    whatHeadline: "Ce qu'est vraiment le GEO",
+    whatBody: "Le Generative Engine Optimization structure votre contenu pour qu'un modèle de langage puisse en extraire une affirmation claire, précise et citable — des chiffres précis, des définitions d'entités claires, des titres formulés en questions, et des données structurées lisibles par machine. C'est une compétence différente du SEO classique par mots-clés, et la plupart des agences ne maîtrisent encore que l'ancienne.",
+    diffHeadline: "Pourquoi nous ne faisons pas que l'affirmer",
+    diffBody: "Plusieurs agences marocaines commercialisent désormais des services GEO. Presque aucune ne publie de preuve qu'elle est réellement citée quelque part. Notre position est la même que pour tout le reste de ce site : ne pas affirmer, prouver. Chaque page technique de seonid.agency intègre les données structurées (schéma Article, BreadcrumbList, Organization) dont dépend le GEO — vous pouvez le vérifier dans le code source de cette page dès maintenant.",
+    trackingHeadline: "Notre propre journal de citations",
+    trackingBody: "Nous suivons si seonid.agency est cité par ChatGPT, Perplexity et Google AI Overviews pour des requêtes pertinentes pour notre marché, et nous publions ce que nous trouvons ici — bon ou mauvais. Ce journal a commencé le jour de la mise en ligne de cette page, il est donc court. C'est précisément le principe : une preuve réelle commence petite et grandit, contrairement à une affirmation, qui naît déjà complète et reste invérifiable.",
+    trackingEmpty: "Aucune citation vérifiée enregistrée pour l'instant. Revenez plus tard — les entrées sont ajoutées dès qu'une citation est confirmée, pas avant.",
+    ctaHeadline: "Envie d'un contrôle de préparation GEO en plus de votre audit technique ?",
+    cta: "Obtenez votre audit gratuit",
+  },
 };
 
 export default fr;

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { articleSlugs } from "./[locale]/blog/[slug]/page";
 
-const routes = ["", "/services", "/process", "/about", "/audit", "/blog", "/contact", "/terms", "/privacy"];
+const routes = ["", "/services", "/process", "/about", "/audit", "/blog", "/contact", "/terms", "/privacy", "/geo", "/promo"];
 const baseUrl = "https://seonid.agency";
 
 export default function sitemap(): MetadataRoute.Sitemap {

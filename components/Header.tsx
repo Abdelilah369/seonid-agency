@@ -94,6 +94,19 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
                 </Link>
 
                 <Link
+                  href={`/${locale}/geo`}
+                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface"
+                >
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent-deep font-bold text-xs">
+                    03
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">GEO / AI Search Visibility</p>
+                    <p className="text-xs text-ink-muted mt-0.5">Get cited by ChatGPT & Perplexity, not just ranked.</p>
+                  </div>
+                </Link>
+
+                <Link
                   href={`/${locale}/audit`}
                   className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-accent/10 border-t border-border/40 mt-1"
                 >
@@ -236,6 +249,13 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
               className="block text-base font-semibold text-ink"
             >
               {dict.nav.services}
+            </Link>
+            <Link
+              href={`/${locale}/geo`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base font-semibold text-ink"
+            >
+              GEO / AI Search
             </Link>
             <Link
               href={`/${locale}/process`}
