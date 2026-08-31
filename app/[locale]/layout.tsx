@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { isRtl, locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
+import { Analytics } from "@vercel/analytics/next";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -90,6 +91,7 @@ export default async function LocaleLayout({
         <Header locale={locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />
+        <Analytics />
       </body>
     </html>
   );
