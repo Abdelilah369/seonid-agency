@@ -20,33 +20,50 @@ export default async function ContactPage({
   const t = dict.contact;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
-      <p className="text-[13px] font-semibold uppercase tracking-[0.09em] text-accent-deep">
-        {t.eyebrow}
-      </p>
-      <h1 className="mt-5 max-w-[18ch] text-balance font-display text-[34px] font-semibold leading-[1.1] tracking-tight sm:text-[40px]">
-        {t.headline}
-      </h1>
-      <WovenDivider className="mt-6 max-w-[140px]" />
+    <div className="bg-[#080a0d] min-h-[75vh] py-24 text-[#f5f3ec]">
+      <section className="relative overflow-hidden mx-auto max-w-6xl px-6">
+        <div className="pointer-events-none absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-[#d4973b]/10 blur-[140px]" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">
+          <span>{t.eyebrow}</span>
+        </div>
+        <h1 className="mt-5 max-w-[20ch] text-balance font-display text-[36px] font-bold leading-[1.1] tracking-tight sm:text-[46px] text-white">
+          {t.headline}
+        </h1>
+        <WovenDivider className="mt-6 max-w-[140px]" />
 
-      <div className="mt-10 max-w-[52ch] space-y-5 text-[15.5px] leading-relaxed text-ink-muted">
-        <p>{t.p1}</p>
-        <p>
-          {t.p2Pre}{" "}
-          <a
-            href="mailto:hello@seonid.agency"
-            dir="ltr"
-            className="font-semibold text-ink underline decoration-border decoration-2 underline-offset-4 hover:decoration-accent"
-          >
-            hello@seonid.agency
-          </a>
-        </p>
-        <p className="text-[14px] text-ink-faint">{t.location}</p>
-      </div>
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div className="max-w-[52ch] space-y-5 text-[16px] leading-relaxed text-slate-300">
+            <p>{t.p1}</p>
+            <p>
+              {t.p2Pre}{" "}
+              <a
+                href="mailto:hello@seonid.agency"
+                dir="ltr"
+                className="font-mono font-semibold text-[#d4973b] underline decoration-[#d4973b]/40 decoration-2 underline-offset-4 hover:text-[#e5ad58]"
+              >
+                hello@seonid.agency
+              </a>
+            </p>
+            <p className="font-mono text-[13px] text-slate-500">{t.location}</p>
 
-      <div className="mt-9">
-        <CtaButton href={`/${locale}/audit`}>{t.cta}</CtaButton>
-      </div>
-    </section>
+            <div className="pt-4">
+              <CtaButton href={`/${locale}/audit`}>{t.cta}</CtaButton>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-[#0c0f14] p-8 font-mono text-xs text-slate-400 shadow-2xl backdrop-blur-xl">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3 text-[#d4973b]">
+              <span>DIRECT INBOX DISPATCH</span>
+              <span>24H SLA</span>
+            </div>
+            <div className="mt-4 space-y-2 text-slate-300">
+              <p>📍 Location: Casablanca &amp; Rabat, Morocco</p>
+              <p>🌐 Timezone: GMT+1 (Aligned with UK, EU &amp; US East)</p>
+              <p>⚡ Direct Channel: Dedicated Slack / WhatsApp for Client Partners</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -5,55 +5,65 @@ import type { Dictionary } from "@/lib/dictionaries";
 
 export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <footer className="mt-32 border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 pt-12 pb-10">
-        <WovenDivider className="mb-10 max-w-[200px] opacity-70" />
+    <footer className="border-t border-white/10 bg-[#06080b]">
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-12">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <span className="font-display text-[19px] font-semibold">
-              <span className="text-ink">SEO</span>
-              <span className="text-accent-deep">nid</span>
+            <span className="font-display text-[21px] font-bold">
+              <span className="text-white">SEO</span>
+              <span className="text-[#d4973b]">nid</span>
             </span>
-            <p className="mt-3 max-w-[26ch] text-[13.5px] leading-relaxed text-ink-muted">
+            <p className="mt-3 max-w-[28ch] text-xs leading-relaxed text-slate-400">
               {dict.footer.tagline}
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3 py-1 text-[11px] font-mono text-[#d4973b]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#d4973b] animate-pulse" />
+              <span>Edge Performance &amp; GEO</span>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-faint">
+            <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-slate-500">
               {dict.footer.agency}
             </h3>
-            <ul className="mt-4 space-y-2.5 text-[14px] text-ink-muted">
-              <li><Link href={`/${locale}/services`} className="hover:text-ink">{dict.nav.services}</Link></li>
-              <li><Link href={`/${locale}/process`} className="hover:text-ink">{dict.nav.process}</Link></li>
-              <li><Link href={`/${locale}/about`} className="hover:text-ink">{dict.nav.about}</Link></li>
+            <ul className="mt-4 space-y-2.5 text-xs text-slate-400">
+              <li><Link href={`/${locale}/services`} className="hover:text-[#d4973b] transition">{dict.nav.services}</Link></li>
+              <li><Link href={`/${locale}/process`} className="hover:text-[#d4973b] transition">{dict.nav.process}</Link></li>
+              <li><Link href={`/${locale}/about`} className="hover:text-[#d4973b] transition">{dict.nav.about}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-faint">
+            <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-slate-500">
               {dict.footer.resources}
             </h3>
-            <ul className="mt-4 space-y-2.5 text-[14px] text-ink-muted">
-              <li><Link href={`/${locale}/blog`} className="hover:text-ink">{dict.footer.blog}</Link></li>
-              <li><Link href={`/${locale}/audit`} className="hover:text-ink">{dict.footer.freeAudit}</Link></li>
+            <ul className="mt-4 space-y-2.5 text-xs text-slate-400">
+              <li><Link href={`/${locale}/blog`} className="hover:text-[#d4973b] transition">{dict.footer.blog}</Link></li>
+              <li><Link href={`/${locale}/geo`} className="hover:text-[#d4973b] transition">GEO Masterclass</Link></li>
+              <li><Link href={`/${locale}/audit`} className="hover:text-[#d4973b] transition">{dict.footer.freeAudit}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-faint">
+            <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-slate-500">
               {dict.footer.getInTouch}
             </h3>
-            <ul className="mt-4 space-y-2.5 text-[14px] text-ink-muted">
-              <li><Link href={`/${locale}/contact`} className="hover:text-ink">{dict.footer.contact}</Link></li>
-              <li><a href="mailto:hello@seonid.agency" dir="ltr" className="hover:text-ink">hello@seonid.agency</a></li>
+            <ul className="mt-4 space-y-2.5 text-xs text-slate-400">
+              <li><Link href={`/${locale}/contact`} className="hover:text-[#d4973b] transition">{dict.footer.contact}</Link></li>
+              <li><a href="mailto:hello@seonid.agency" dir="ltr" className="hover:text-[#d4973b] transition">hello@seonid.agency</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-[12.5px] text-ink-faint sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} SEONID AGENCY. {dict.footer.rights}</span>
-          <span>{dict.footer.location}</span>
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/5 pt-6 text-[11.5px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-4">
+            <span>© {new Date().getFullYear()} SEONID AGENCY. {dict.footer.rights}</span>
+            <span className="text-white/20">·</span>
+            <Link href={`/${locale}/privacy`} className="hover:text-[#d4973b] transition">Privacy Policy</Link>
+            <span className="text-white/20">·</span>
+            <Link href={`/${locale}/terms`} className="hover:text-[#d4973b] transition">Terms of Service</Link>
+          </div>
+          <span className="font-mono text-[11px]">Next.js 15 · Turbopack · Global Edge</span>
         </div>
       </div>
     </footer>

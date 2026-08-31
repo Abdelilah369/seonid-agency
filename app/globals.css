@@ -1,30 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #eef0e9;
-  --surface: #fbfaf6;
-  --surface-2: #e4e6db;
-  --ink: #14251f;
-  --ink-muted: #4c5c55;
-  --ink-faint: #7c8a80;
-  --border: #d6d8cb;
-  --accent: #c08a2e;
-  --accent-deep: #8c6420;
-  --accent-soft: #f1e3c4;
+  /* SEONID "Architectural Monolith" Palette */
+  --bg: #080a0d;
+  --surface: #0f1217;
+  --surface-2: #151a22;
+  --ink: #f5f3ec;
+  --ink-muted: #9da3af;
+  --ink-faint: #596172;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(212, 151, 59, 0.35);
+  --accent: #d4973b;
+  --accent-deep: #b87b22;
+  --accent-soft: rgba(212, 151, 59, 0.12);
+  --brass: #e5ad58;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --bg: #0e1714;
-    --surface: #16211c;
-    --surface-2: #1c2921;
-    --ink: #edeee6;
-    --ink-muted: #a9b3a9;
-    --ink-faint: #6e7a70;
-    --border: #2a362f;
-    --accent: #e2a94f;
-    --accent-deep: #f4ce96;
-    --accent-soft: rgba(226, 169, 79, 0.14);
+    --bg: #080a0d;
+    --surface: #0f1217;
+    --surface-2: #151a22;
+    --ink: #f5f3ec;
+    --ink-muted: #9da3af;
+    --ink-faint: #596172;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(212, 151, 59, 0.35);
+    --accent: #d4973b;
+    --accent-deep: #b87b22;
+    --accent-soft: rgba(212, 151, 59, 0.12);
+    --brass: #e5ad58;
   }
 }
 
@@ -50,12 +55,48 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--ink);
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle Architectural Grid Pattern */
+.bg-blueprint-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Brass & Amber Lighting Accents */
+.glow-amber {
+  box-shadow: 0 0 40px -10px rgba(212, 151, 59, 0.25);
+}
+
+.border-brass-glow {
+  border-color: rgba(212, 151, 59, 0.35);
+  box-shadow: 0 0 25px -5px rgba(212, 151, 59, 0.15);
+}
+
+/* Architectural Drafting Corner Mark */
+.draft-card {
+  position: relative;
+}
+.draft-card::after {
+  content: '+';
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(212, 151, 59, 0.4);
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -69,8 +110,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: #080a0d;
 }
 
 a:focus-visible,
@@ -80,9 +121,7 @@ button:focus-visible,
   outline-offset: 3px;
 }
 
-/* Woven signature motif — a braided line, used as a section divider and
-   as an underline device. Represents "nid" (nest, FR) woven from strands
-   of SEO + design + content. */
+/* Woven signature motif */
 .woven {
   display: block;
   width: 100%;

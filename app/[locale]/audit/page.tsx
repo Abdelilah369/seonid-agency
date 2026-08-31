@@ -45,10 +45,10 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
         <div className="rounded-3xl border border-border bg-surface p-7 sm:p-9 shadow-xl">
           <div className="mb-6 border-b border-border pb-4">
             <h2 className="font-display text-[20px] font-semibold text-ink">
-              {locale === "ar" ? "طلب التدقيق المجاني" : locale === "fr" ? "Demandez votre audit gratuit" : "Request Your Free Audit"}
+              {locale === "ar" ? "ابدأ مشروعك الآن" : locale === "fr" ? "Démarrer un projet" : "Start a Project"}
             </h2>
             <p className="mt-1 text-[13px] text-ink-faint">
-              {locale === "ar" ? "تقرير مكتوب يصل إلى بريدك خلال 48 ساعة دون أي التزام." : locale === "fr" ? "Rapport complet livré par email sous 48h sans engagement." : "Comprehensive deliverable sent to your inbox within 48h."}
+              {locale === "ar" ? "سنراجع تفاصيل مشروعك ونرسل خطة عمل تقنية خلال 24 ساعة." : locale === "fr" ? "Nous analysons votre projet et vous répondons sous 24h avec un plan technique." : "We'll review your project details and respond within 24h with next steps."}
             </p>
           </div>
           <AuditForm t={t.form} />

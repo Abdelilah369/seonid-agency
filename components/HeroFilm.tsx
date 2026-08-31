@@ -1,138 +1,177 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import WovenDivider from "./WovenDivider";
+import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 
 export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [timeStr, setTimeStr] = useState("12:00 GMT+1");
   const t = dict.home;
   const isAr = locale === "ar";
 
+  useEffect(() => {
+    const updateTime = () => {
+      const d = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: "Africa/Casablanca",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      };
+      setTimeStr(`${d.toLocaleTimeString("en-GB", options)} GMT+1`);
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0d1814] via-[#111e19] to-bg py-16 sm:py-24 lg:py-28 text-white">
-      {/* Background Subtle Ambient Glow */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#080a0d] via-[#0c0f14] to-[#080a0d] py-16 sm:py-24 lg:py-28 text-white">
+      <style>{`
+        @keyframes floating-card {
+          0% { transform: translateY(0px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
+          50% { transform: translateY(-6px); box-shadow: 0 30px 50px -12px rgba(212, 151, 59, 0.2); }
+          100% { transform: translateY(0px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
+        }
+      `}</style>
+
+      {/* Luxury Ambient Mesh Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-[#c08a2e]/15 blur-[120px]" />
-        <div className="absolute top-1/2 -right-32 h-[550px] w-[550px] rounded-full bg-[#1b3d30]/35 blur-[140px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-blueprint-grid opacity-20" />
+        <div className="absolute -top-32 -left-32 h-[550px] w-[550px] rounded-full bg-[#d4973b]/10 blur-[150px]" />
+        <div className="absolute top-1/2 -right-32 h-[600px] w-[600px] rounded-full bg-[#d4973b]/5 blur-[180px]" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6">
+        {/* Luxury Telemetry Status Strip */}
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4 font-mono text-[11.5px] text-slate-400">
+          <div className="flex items-center gap-3">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-white font-semibold">STUDIO ACTIVE · CASABLANCA &amp; GLOBAL</span>
+            <span className="text-white/20">|</span>
+            <span>LOCAL: {timeStr}</span>
+          </div>
+
+          <div className="flex items-center gap-4 text-xs">
+            <span className="text-[#d4973b] font-bold">EDGE RTT: &lt;45ms</span>
+            <span className="text-white/20">|</span>
+            <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-slate-300">
+              Q2 COHORT: 2 PARTNER SLOTS OPEN
+            </span>
+          </div>
+        </div>
+
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           {/* Left: Master Headline & Action */}
           <div>
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 backdrop-blur-md">
-              <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
-              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-accent">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-4 py-1.5 backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-[#d4973b]" />
+              <p className="text-[12px] font-mono font-bold uppercase tracking-[0.14em] text-[#d4973b]">
                 {t.heroEyebrow}
               </p>
             </div>
 
             {/* Master Headline */}
-            <h1 className="mt-6 text-balance font-display text-[30px] sm:text-[46px] lg:text-[56px] font-bold leading-[1.12] tracking-tight text-white">
+            <h1 className="mt-6 text-balance font-display text-[32px] sm:text-[46px] lg:text-[54px] font-bold leading-[1.12] tracking-tight text-[#f5f3ec]">
               {t.heroHeadline}
             </h1>
 
             <WovenDivider className="mt-6 max-w-[160px]" />
 
             {/* Subheading */}
-            <p className="mt-6 max-w-[48ch] text-[16.5px] leading-relaxed text-white/85 sm:text-[18px]">
+            <p className="mt-6 max-w-[48ch] text-[16px] leading-relaxed text-slate-300 sm:text-[17.5px]">
               {t.heroSubhead}
             </p>
 
-            {/* Action CTAs & Watch Video Button */}
+            {/* Action CTAs: Clean Luxury, No Arrows/Flashes */}
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href={`/${locale}/audit`}
-                className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-3.5 text-[15px] font-bold text-[#1a1206] shadow-xl shadow-accent/20 transition-all hover:bg-accent-deep hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center rounded-full bg-[#d4973b] px-8 py-3.5 text-[14.5px] font-bold text-[#080a0d] shadow-xl shadow-[#d4973b]/20 transition-all duration-300 hover:scale-[1.02] hover:bg-[#e5ad58] active:scale-95"
               >
-                <span>{t.heroCtaPrimary}</span>
-                <span className={isAr ? "rotate-180" : ""}>→</span>
+                {t.heroCtaPrimary}
               </Link>
-
-              {/* Watch Video Modal Trigger */}
-              <button
-                type="button"
-                onClick={() => setVideoOpen(true)}
-                className="inline-flex items-center gap-2.5 rounded-full border border-accent/40 bg-card/60 px-6 py-3.5 text-[14.5px] font-bold text-accent transition-all hover:bg-accent/15 hover:border-accent hover:scale-[1.02] active:scale-[0.98] backdrop-blur-md"
+              <Link
+                href={`/${locale}/services`}
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-[14.5px] font-semibold text-white backdrop-blur-md transition hover:bg-white/10 hover:border-white/40"
               >
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-accent text-[#1a1206] text-xs">
-                  ▶
-                </span>
-                <span>{isAr ? "شاهد الفيديو التعريفي (35ث)" : "Watch Agency Film (35s)"}</span>
-              </button>
+                {t.heroCtaSecondary}
+              </Link>
             </div>
 
             {/* Proof Badges Bar */}
-            <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6 text-[12.5px] text-white/70">
+            <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6 text-[12.5px] text-slate-400">
               <div className="flex items-center gap-2">
-                <span className="font-display text-base font-bold text-accent">12</span>
-                <span>Agencies Benchmarked</span>
+                <span className="font-mono text-sm font-bold text-[#d4973b]">12</span>
+                <span>Agencies Audited</span>
               </div>
               <span className="text-white/20">·</span>
               <div className="flex items-center gap-2">
-                <span className="font-display text-base font-bold text-accent">&lt;0.8s</span>
+                <span className="font-mono text-sm font-bold text-[#d4973b]">&lt;0.75s</span>
                 <span>Core Web Vitals TTFB</span>
               </div>
               <span className="text-white/20">·</span>
               <div className="flex items-center gap-2">
-                <span className="font-display text-base font-bold text-accent">48h</span>
-                <span>Guaranteed SLA</span>
+                <span className="font-mono text-sm font-bold text-[#d4973b]">48h</span>
+                <span>Diagnostic SLA</span>
               </div>
             </div>
           </div>
 
           {/* Right: Prominent High-Resolution Studio & Benchmark Card */}
-          <div className="relative">
+          <div className="relative" style={{ perspective: "1000px" }}>
             <div
               onClick={() => setVideoOpen(true)}
-              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-accent/40 bg-gradient-to-br from-card via-[#12231c] to-[#0d1814] p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-accent hover:shadow-accent/20"
+              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-[#121720] via-[#0d1015] to-[#080a0d] p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-[#d4973b]/60 hover:shadow-[#d4973b]/15"
+              style={{ animation: "floating-card 8s ease-in-out infinite" }}
             >
-              {/* Studio Visual Preview */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src="/images/hero-cinematic.jpg"
-                  alt="SEONID Agency Moroccan Architectural Studio"
+              {/* Studio Visual Preview with Ambient Autoplay Video Loop */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 bg-black">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/images/hero-luxury.jpg"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1814] via-transparent to-transparent opacity-80" />
+                >
+                  <source src="/videos/hero_architectural_loop.mp4" type="video/mp4" />
+                </video>
 
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="grid h-14 w-14 place-items-center rounded-full border border-white/30 bg-black/60 text-accent shadow-2xl backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:text-[#1a1206]">
-                    <span className="text-lg">▶</span>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080a0d] via-transparent to-[#080a0d]/30 opacity-60" />
 
                 {/* Floating Performance Score Pill */}
-                <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-black/60 px-3 py-1 text-xs font-bold text-emerald-400 backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>99 / 100 Speed Score</span>
+                <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full border border-[#d4973b]/40 bg-black/85 px-3 py-1 font-mono text-xs font-bold text-[#d4973b] backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-[#d4973b] animate-pulse" />
+                  <span>CWV Score: 100/100</span>
                 </div>
 
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90">
-                  <span className="font-mono font-bold text-accent">SEONID · Forensic Spec</span>
-                  <span className="text-[11px] text-white/60">Casablanca & Rabat</span>
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
+                  <span className="font-mono font-bold text-[#d4973b]">SEONID Architecture</span>
+                  <span className="font-mono text-[11px] text-slate-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
+                    4K Precision Loop
+                  </span>
                 </div>
               </div>
 
               {/* Technical Metrics Breakdown */}
               <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
-                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
-                  <p className="font-bold text-accent text-sm">0.64s</p>
-                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">LCP Speed</p>
+                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                  <p className="font-mono font-bold text-[#d4973b] text-sm">0.65s</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">LCP Speed</p>
                 </div>
-                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
-                  <p className="font-bold text-emerald-400 text-sm">0.00</p>
-                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">CLS Shift</p>
+                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                  <p className="font-mono font-bold text-emerald-400 text-sm">0.00</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">CLS Shift</p>
                 </div>
-                <div className="rounded-xl bg-white/5 p-2.5 border border-white/10">
-                  <p className="font-bold text-white text-sm">Next 16</p>
-                  <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">Turbopack</p>
+                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                  <p className="font-mono font-bold text-white text-sm">Next.js 15</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Turbopack</p>
                 </div>
               </div>
             </div>
@@ -143,18 +182,18 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
       {/* Interactive Cinematic Video Modal */}
       {videoOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-xl animate-in fade-in duration-300"
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 backdrop-blur-2xl animate-in fade-in duration-300"
           onClick={() => setVideoOpen(false)}
         >
           <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-accent/40 bg-[#0d1814] p-2 shadow-2xl"
+            className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-[#d4973b]/40 bg-[#0a0d12] p-3 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setVideoOpen(false)}
-              className="absolute top-4 right-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/70 text-white transition-colors hover:bg-accent hover:text-[#1a1206]"
+              className="absolute top-4 right-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/80 text-white transition-colors hover:bg-[#d4973b] hover:text-[#080a0d]"
               aria-label="Close Video"
             >
               ✕
@@ -166,21 +205,21 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                 controls
                 playsInline
                 className="h-full w-full object-contain"
-                poster="/images/hero-cinematic.jpg"
+                poster="/images/hero-luxury.jpg"
               >
-                <source src="/promo/seonid_promo_cinematic.mp4" type="video/mp4" />
+                <source src="/videos/hero_architectural_loop.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
 
             <div className="flex items-center justify-between p-4 text-xs text-white/80">
-              <span className="font-mono font-bold text-accent">SEONID Agency · Commercial Film (1080p 60fps)</span>
+              <span className="font-mono font-bold text-[#d4973b]">SEONID Architecture · 1080p 60fps Master</span>
               <Link
                 href={`/${locale}/audit`}
                 onClick={() => setVideoOpen(false)}
-                className="rounded-lg bg-accent px-4 py-2 font-bold text-[#1a1206] transition hover:bg-accent-deep"
+                className="rounded-full bg-[#d4973b] px-5 py-2 font-bold text-[#080a0d] transition hover:bg-[#e5ad58]"
               >
-                {dict.nav.freeAudit} →
+                {dict.nav.freeAudit}
               </Link>
             </div>
           </div>

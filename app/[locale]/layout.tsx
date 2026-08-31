@@ -36,11 +36,20 @@ export async function generateMetadata({
   const { locale } = await params;
   const dict = getDictionary(locale);
   return {
+    metadataBase: new URL("https://seonid.agency"),
     title: {
       default: dict.home.meta.title,
       template: `%s — SEONID AGENCY`,
     },
     description: dict.home.meta.description,
+    alternates: {
+      canonical: `https://seonid.agency/${locale}`,
+      languages: {
+        'en': 'https://seonid.agency/en',
+        'fr': 'https://seonid.agency/fr',
+        'ar': 'https://seonid.agency/ar',
+      },
+    },
   };
 }
 

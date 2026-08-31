@@ -19,12 +19,15 @@ export default function LuxuryPricingCalculator({ locale }: { locale: Locale }) 
   const estimatedRetainer = Math.round(basePrice * trafficMultiplier * timelineMultiplier);
 
   return (
-    <div className="rounded-3xl border border-border bg-surface-2/40 p-8 sm:p-12 shadow-2xl">
+    <div className="rounded-3xl border border-white/10 bg-[#0c0f14] p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
       <div className="mx-auto max-w-2xl text-center mb-10">
-        <h2 className="font-display text-[28px] font-bold text-ink sm:text-[32px]">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 text-xs font-mono font-bold text-[#d4973b] mb-3">
+          <span>DYNAMIC RETAINER ESTIMATOR</span>
+        </div>
+        <h2 className="font-display text-[28px] font-bold text-white sm:text-[32px]">
           {isAr ? "احسب استثمارك" : isFr ? "Estimez votre investissement" : "Calculate Your Investment"}
         </h2>
-        <p className="mt-3 text-[15px] text-ink-muted">
+        <p className="mt-3 text-[15px] text-slate-400">
           {isAr
             ? "نحن لا نبيع باقات جاهزة. استخدم هذه الأداة لتقدير ميزانية شراكة النمو الخاصة بك."
             : isFr
@@ -37,7 +40,7 @@ export default function LuxuryPricingCalculator({ locale }: { locale: Locale }) 
         <div className="space-y-8">
           {/* Industry Selection */}
           <div className="space-y-4">
-            <label className="text-[13px] font-bold uppercase tracking-wider text-ink-faint">
+            <label className="text-[12px] font-mono font-bold uppercase tracking-wider text-slate-400">
               {isAr ? "مجال عملك" : isFr ? "Votre secteur" : "Your Industry"}
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -45,14 +48,14 @@ export default function LuxuryPricingCalculator({ locale }: { locale: Locale }) 
                 <button
                   key={type}
                   onClick={() => setIndustry(type)}
-                  className={`rounded-xl border p-4 text-left transition-all ${
+                  className={`rounded-2xl border p-4 text-left transition-all ${
                     industry === type
-                      ? "border-accent bg-accent/5 shadow-[0_0_15px_rgba(var(--accent-rgb),0.15)]"
-                      : "border-border/60 bg-bg hover:border-accent/40"
+                      ? "border-[#d4973b] bg-[#d4973b]/10 shadow-lg shadow-[#d4973b]/10 ring-1 ring-[#d4973b]/40"
+                      : "border-white/5 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
                   }`}
                 >
-                  <div className="text-[14px] font-semibold text-ink capitalize">{type}</div>
-                  <div className="mt-1 text-[11px] text-ink-muted">
+                  <div className="text-[14px] font-semibold text-white capitalize">{type}</div>
+                  <div className="mt-1 text-[11px] text-slate-400">
                     {type === "local" && (isAr ? "خدمات محلية / عيادات" : isFr ? "Services locaux / Cliniques" : "Local Services / Clinics")}
                     {type === "ecommerce" && (isAr ? "متاجر إلكترونية" : isFr ? "E-commerce" : "E-commerce Stores")}
                     {type === "enterprise" && (isAr ? "شركات B2B / مؤسسات" : isFr ? "B2B / Entreprises" : "B2B / Enterprise")}
@@ -65,74 +68,99 @@ export default function LuxuryPricingCalculator({ locale }: { locale: Locale }) 
           {/* Traffic Slider */}
           <div className="space-y-4">
             <div className="flex justify-between">
-              <label className="text-[13px] font-bold uppercase tracking-wider text-ink-faint">
+              <label className="text-[12px] font-mono font-bold uppercase tracking-wider text-slate-400">
                 {isAr ? "الزيارات الشهرية الحالية" : isFr ? "Trafic mensuel actuel" : "Current Monthly Traffic"}
               </label>
-              <span className="font-mono text-[14px] font-semibold text-accent-deep">
+              <span className="font-mono text-[14px] font-semibold text-[#d4973b]">
                 {traffic.toLocaleString()}
               </span>
             </div>
             <input
               type="range"
               min="1000"
-              max="500000"
-              step="1000"
+              max="200000"
+              step="5000"
               value={traffic}
               onChange={(e) => setTraffic(Number(e.target.value))}
-              className="w-full accent-accent h-1.5 bg-border rounded-lg appearance-none cursor-pointer"
+              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-[#d4973b]"
             />
+            <div className="flex justify-between text-[11px] font-mono text-slate-500">
+              <span>1k</span>
+              <span>50k</span>
+              <span>100k</span>
+              <span>200k+</span>
+            </div>
           </div>
 
-          {/* Timeline */}
+          {/* Timeline Speed */}
           <div className="space-y-4">
-            <label className="text-[13px] font-bold uppercase tracking-wider text-ink-faint">
-              {isAr ? "سرعة التنفيذ" : isFr ? "Vitesse d'exécution" : "Execution Velocity"}
+            <label className="text-[12px] font-mono font-bold uppercase tracking-wider text-slate-400">
+              {isAr ? "سرعة التنفيذ" : isFr ? "Vitesse de déploiement" : "Execution Speed"}
             </label>
-            <div className="flex rounded-xl border border-border/60 bg-bg p-1">
+            <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={() => setTimeline("standard")}
-                className={`flex-1 rounded-lg py-2.5 text-[13px] font-semibold transition-colors ${
-                  timeline === "standard" ? "bg-surface shadow text-ink" : "text-ink-muted hover:text-ink"
+                className={`rounded-2xl border p-4 text-left transition-all ${
+                  timeline === "standard"
+                    ? "border-[#d4973b] bg-[#d4973b]/10 text-white"
+                    : "border-white/5 bg-white/[0.02] text-slate-400"
                 }`}
               >
-                {isAr ? "قياسي (6 أشهر)" : isFr ? "Standard (6 mois)" : "Standard (6 Months)"}
+                <div className="text-[13px] font-semibold">Standard Sprint</div>
+                <div className="text-[11px] opacity-70">4 Weeks Duration</div>
               </button>
               <button
                 onClick={() => setTimeline("accelerated")}
-                className={`flex-1 rounded-lg py-2.5 text-[13px] font-semibold transition-colors ${
-                  timeline === "accelerated" ? "bg-accent text-bg shadow-lg" : "text-ink-muted hover:text-ink"
+                className={`rounded-2xl border p-4 text-left transition-all ${
+                  timeline === "accelerated"
+                    ? "border-[#d4973b] bg-[#d4973b]/10 text-white"
+                    : "border-white/5 bg-white/[0.02] text-slate-400"
                 }`}
               >
-                {isAr ? "مكثف (3 أشهر)" : isFr ? "Accéléré (3 mois)" : "Accelerated (3 Months)"}
+                <div className="text-[13px] font-semibold">Accelerated Sprint</div>
+                <div className="text-[11px] opacity-70">2 Weeks Priority Execution</div>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Price Display Board */}
-        <div className="rounded-2xl border border-border/80 bg-bg p-8 shadow-inner text-center sticky top-24">
-          <p className="text-[12px] font-bold uppercase tracking-wider text-ink-faint mb-2">
-            {isAr ? "التقدير الشهري" : isFr ? "Estimation mensuelle" : "Monthly Estimate"}
+        {/* Estimated Price Card */}
+        <div className="rounded-2xl border border-[#d4973b]/30 bg-[#12161f] p-6 text-center shadow-xl">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-[#d4973b]">
+            Estimated Monthly Retainer
           </p>
-          <div className="font-display text-[48px] font-black tracking-tight text-ink">
-            ${estimatedRetainer.toLocaleString()}
+          <div className="mt-4 flex items-baseline justify-center gap-1">
+            <span className="text-[20px] font-bold text-slate-400">$</span>
+            <span className="font-display text-[44px] font-extrabold text-white">
+              {estimatedRetainer.toLocaleString()}
+            </span>
+            <span className="text-[13px] font-mono text-slate-400">/mo</span>
           </div>
-          <p className="mt-1 text-[13px] text-ink-muted mb-8">
-            {isAr ? "بدون رسوم خفية." : isFr ? "Aucun frais caché." : "No hidden fees. Full transparency."}
-          </p>
+
+          <div className="mt-6 space-y-2 border-t border-white/10 pt-4 text-left text-xs text-slate-300">
+            <p className="flex items-center gap-2">
+              <span className="text-[#d4973b]">✓</span> Core Web Vitals SLA (Sub-800ms)
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#d4973b]">✓</span> Full GEO Knowledge Graph
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#d4973b]">✓</span> Direct Founder Engineering Channel
+            </p>
+          </div>
 
           <Link
             href={`/${locale}/audit`}
-            className="block w-full rounded-xl bg-ink py-4 text-center text-[14.5px] font-bold text-bg transition-transform hover:scale-[1.02] active:scale-95 shadow-xl"
+            className="mt-6 block w-full rounded-full bg-[#d4973b] py-3 text-center text-[13px] font-bold text-[#080a0d] shadow-lg shadow-[#d4973b]/20 transition hover:bg-[#e5ad58]"
           >
-            {isAr ? "حجز استشارة الاستراتيجية" : isFr ? "Réserver une consultation" : "Book Strategy Call"}
+            {isAr ? "ابدأ مشروعك الآن" : isFr ? "Démarrer un projet" : "Start a project"} →
           </Link>
-          <p className="mt-4 text-[11px] text-ink-faint leading-relaxed">
+          <p className="mt-4 text-[11px] text-slate-500 leading-relaxed">
             {isAr
-              ? "هذا مجرد تقدير مبدئي. السعر النهائي يعتمد على التدقيق التقني."
+              ? "هذا مجرد تقدير مبدئي. السعر النهائي يعتمد على نطاق العمل المحدد."
               : isFr
-              ? "Ceci est une estimation. Le prix final dépend de l'audit technique."
-              : "This is a preliminary estimate. Final pricing depends on the technical audit."}
+              ? "Ceci est une estimation. Le devis final dépend du périmètre technique validé."
+              : "Preliminary estimate. Final scope and milestones are confirmed during project intake."}
           </p>
         </div>
       </div>

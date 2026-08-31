@@ -13,34 +13,34 @@ export default async function PromoPage({
   const isAr = locale === "ar";
 
   return (
-    <div className="bg-bg py-16 sm:py-24 text-ink">
+    <div className="bg-[#080a0d] py-16 sm:py-24 text-[#f5f3ec]">
       <div className="mx-auto max-w-5xl px-6">
         {/* Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-accent-deep">
-              {isAr ? "العرض السينمائي الرسمي" : "Official Commercial Promo"}
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-4 py-1.5 backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-[#d4973b] animate-ping" />
+            <p className="text-[12px] font-mono font-bold uppercase tracking-[0.14em] text-[#d4973b]">
+              {isAr ? "العرض السينمائي الرسمي" : "Official Commercial Film"}
             </p>
           </div>
 
-          <h1 className="mt-6 font-display text-[36px] font-bold tracking-tight text-ink sm:text-[50px]">
+          <h1 className="mt-6 font-display text-[36px] font-bold tracking-tight text-white sm:text-[50px]">
             {isAr
               ? "هندسة مواقع حقيقية. نتائج مبنية على الدليل."
-              : "Evidence-Based Web Systems, in Motion."}
+              : "Evidence-Based Web Engineering, in Motion."}
           </h1>
 
           <WovenDivider className="mx-auto mt-6 max-w-[160px]" />
 
-          <p className="mx-auto mt-6 max-w-2xl text-[16px] text-ink-muted">
+          <p className="mx-auto mt-6 max-w-2xl text-[16px] text-slate-300">
             {isAr
-              ? "شاهد كيف نهندس منصات رقمية فائقة السرعة تتصدر نتائج البحث وتضاعف الصفقات."
-              : "Discover how SEONID engineers sub-second web platforms that dominate B2B search and convert high-ticket clients."}
+              ? "شاهد كيف نهندس منصات رقمية فائقة السرعة تتصدر نتائج البحث وتضاعف الصفقات عبر الأتمتة."
+              : "Discover how SEONID engineers sub-second web platforms and autonomous n8n workflows that dominate search and convert high-ticket clients."}
           </p>
         </div>
 
         {/* Video Player Container */}
-        <div className="mt-12 overflow-hidden rounded-3xl border border-accent/40 bg-card p-4 shadow-2xl backdrop-blur-xl">
+        <div className="mt-12 overflow-hidden rounded-3xl border border-[#d4973b]/30 bg-[#0c0f14] p-4 shadow-2xl backdrop-blur-xl">
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black">
             <video
               controls
@@ -55,27 +55,27 @@ export default async function PromoPage({
           </div>
 
           {/* Action Row */}
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-border/60 pt-6 px-2">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 px-2">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-600">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-xs font-bold text-emerald-400">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 1080p 60fps · FastStart Web
               </span>
-              <span className="text-xs text-ink-muted font-mono">35s · 7.6 MB</span>
+              <span className="text-xs text-slate-400 font-mono">35s · 7.6 MB</span>
             </div>
 
             <div className="flex items-center gap-3">
               <a
                 href="/promo/seonid_promo_cinematic.mp4"
                 download="SEONID_Agency_Promo.mp4"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-xs font-bold text-ink transition hover:bg-muted"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-mono font-bold text-white transition hover:bg-white/10"
               >
                 <span>↓ Download MP4</span>
               </a>
 
               <Link
                 href={`/${locale}/audit`}
-                className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-2.5 text-xs font-bold text-[#1a1206] shadow-md shadow-accent/20 transition hover:bg-accent-deep"
+                className="inline-flex items-center gap-2 rounded-full bg-[#d4973b] px-6 py-2.5 text-xs font-bold text-[#080a0d] shadow-lg shadow-[#d4973b]/20 transition hover:bg-[#e5ad58] hover:scale-105"
               >
                 <span>{dict.nav.freeAudit}</span>
                 <span className={isAr ? "rotate-180" : ""}>→</span>
