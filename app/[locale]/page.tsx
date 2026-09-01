@@ -6,9 +6,7 @@ import LiveAuditScanner from "@/components/LiveAuditScanner";
 import EngineeringLayers from "@/components/EngineeringLayers";
 import TechStackShowcase from "@/components/TechStackShowcase";
 import InteractiveKnowledgeGraph from "@/components/InteractiveKnowledgeGraph";
-import CaseStudiesTeardown from "@/components/CaseStudiesTeardown";
-import UnifiedBenchmarkSuite from "@/components/UnifiedBenchmarkSuite";
-import InteractiveTerminal from "@/components/InteractiveTerminal";
+import WovenDivider from "@/components/WovenDivider";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
@@ -25,6 +23,11 @@ export async function generateMetadata({
   };
 }
 
+/** Small helper for computing the current locale's home path. */
+function localHref(locale: Locale, path: string) {
+  return `/${locale}${path}`;
+}
+
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = (await params) as { locale: Locale };
   const dict = getDictionary(locale);
@@ -32,141 +35,286 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const isAr = locale === "ar";
 
   return (
-    <div className="bg-[#080a0d] text-[#f5f3ec]">
-      {/* 1. Architectural Hero */}
+    <div className="bg-bg text-ink">
+      {/* 1. Hero (honest, method-first) */}
       <HeroFilm locale={locale} dict={dict} />
 
-      {/* 2. Core Engineering Stack */}
+      {/* 2. The problem — "The invisible website" */}
+      {t.problem && (
+        <section className="border-t border-border bg-bg py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div>
+                <div className="tech-label">{t.problem.eyebrow}</div>
+                <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                  {t.problem.headline}
+                </h2>
+                <div className="mt-6 rounded-2xl border border-accent/30 bg-accent-soft p-6">
+                  <p className="font-display text-2xl font-bold leading-tight">
+                    {t.problem.stat}
+                  </p>
+                  <p className="mt-2 text-sm text-ink-muted">{t.problem.statDef}</p>
+                </div>
+              </div>
+              <ul className="space-y-5">
+                {(t.problem.pains || []).map((p: string, i: number) => (
+                  <li key={i} className="flex gap-4 rounded-xl card-surface p-5">
+                    <span className="tech-label mt-1">0{i + 1}</span>
+                    <p className="text-[15px] leading-relaxed text-ink-muted">{p}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3. Proof-of-method — what's inside the free audit */}
+      {t.proof && (
+        <section className="border-t border-border bg-surface py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-12">
+              <div className="tech-label">{t.proof.eyebrow}</div>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {t.proof.headline}
+              </h2>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {(t.proof.points || []).map(
+                (pt: { name: string; body: string }, i: number) => (
+                  <div key={i} className="card-surface p-6">
+                    <div className="tech-label">{pt.name}</div>
+                    <p className="mt-3 text-sm leading-relaxed text-ink-muted">{pt.body}</p>
+                  </div>
+                )
+              )}
+            </div>
+            <div className="mt-10 text-center">
+              <Link
+                href={localHref(locale, "/audit")}
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-bold text-bg transition hover:bg-brass"
+              >
+                {t.proof.cta} →
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 4. Core Engineering Stack */}
       <TechStackShowcase locale={locale} />
 
-      {/* 3. 3-Layer Engineering Architecture */}
+      {/* 5. 3-Layer Engineering Architecture */}
       <section className="relative mx-auto max-w-6xl px-6 py-24">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent-soft px-3.5 py-1 font-mono text-xs font-bold text-accent">
             <span>SYSTEM ARCHITECTURE</span>
           </div>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink">
             {isAr ? "الهندسة الرقمية ثلاثية الطبقات" : "The 3-Layer Performance Architecture"}
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-400">
+          <p className="mx-auto mt-3 max-w-2xl text-base text-ink-muted">
             {isAr
               ? "بنية متكاملة تدمج سرعة خوادم الحافة، والتموضع في محركات الذكاء الاصطناعي، وأتمتة مسارات العمل."
-              : "How we engineer web applications that eliminate latency, get cited by AI search models, and automate operational workflows."}
+              : "How we engineer web applications that load fast, get cited by AI search, and automate workflows."}
           </p>
         </div>
-
         <EngineeringLayers locale={locale} />
       </section>
 
-      {/* 4. Interactive GEO Knowledge Graph Visualizer */}
-      <section className="border-t border-white/10 bg-[#0a0d12] py-24">
+      {/* 6. Interactive GEO Knowledge Graph */}
+      <section className="border-t border-border bg-surface py-24">
         <div className="mx-auto max-w-6xl px-6">
           <InteractiveKnowledgeGraph locale={locale} />
         </div>
       </section>
 
-      {/* 5. Real Client Case Studies & Teardowns */}
-      <section className="border-t border-white/10 bg-[#080a0d] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <CaseStudiesTeardown locale={locale} />
-        </div>
-      </section>
-
-      {/* 6. Unified Forensic Benchmark Suite */}
-      <section className="border-t border-white/10 bg-[#0a0d12] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <UnifiedBenchmarkSuite locale={locale} />
-        </div>
-      </section>
-
-      {/* 7. Live Interactive Audit Scanner */}
-      <section className="relative mx-auto max-w-6xl px-6 py-24">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">
-            <span>FORENSIC DIAGNOSTIC TOOL</span>
-          </div>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            {isAr ? "فحص فوري لأداء موقعك وبنيته التقنية" : "Inspect Your Architecture Live"}
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-400">
-            {isAr
-              ? "تحليل فوري يكشف سرعة الاستجابة، جاهزية الذكاء الاصطناعي، والأخطاء البرمجية الخفية."
-              : "Simulate a live forensic audit across Core Web Vitals, Schema validation, and LLM search discoverability."}
-          </p>
-        </div>
-
-        <LiveAuditScanner locale={locale} />
-      </section>
-
-      {/* 8. Interactive CLI Terminal & Founder Manifesto */}
-      <section className="border-t border-white/10 bg-[#0a0d12] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            {/* Left: Founder Philosophy */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">
-                <span>ARCHITECTURAL MANIFESTO</span>
-              </div>
-              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                {isAr
-                  ? "مهندس ذكاء اصطناعي واحد. صفر طبقات وسطاء."
-                  : "One Solutions Architect. Direct Engineering. Zero Friction."}
+      {/* 7. Services — three cards */}
+      {t.services && t.services.cards && (
+        <section className="border-t border-border bg-bg py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-12">
+              <div className="tech-label">{t.services.eyebrow}</div>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {t.services.headline}
               </h2>
-              <p className="mt-6 text-base leading-relaxed text-slate-300">
-                {isAr
-                  ? "تدار SEONID بواسطة عبد الإله الكرومي، مهندس برمجيات وخبير استراتيجي في الذكاء الاصطناعي. بينما توظف الوكالات الكبيرة مديري حسابات يتناقلون رسائلك عبر البريد الإلكتروني، هنا أنت تتحدث وتعمل مباشرة مع المهندس الذي يبني كودك ومسارات أتمتتك."
-                  : "SEONID is operated by Abdelilah Karroumi, a software engineer and solutions architect. Large agencies drown you in junior account managers and outsourced queues. Here, you work directly with the technical mind coding your edge architecture, mapping your GEO graphs, and building your n8n pipelines."}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-400">
-                {isAr
-                  ? "نموذجنا يعتمد على عدد عملاء محدود كل ربع سنة، مع تركيز هندسي كامل وتسليمات سريعة خلال 14 يوماً."
-                  : "We accept a strict maximum of client partners per quarter, delivering sub-second edge architectures with zero agency bloat."}
-              </p>
+            </div>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {t.services.cards.map(
+                (c: {
+                  index: string;
+                  title: string;
+                  outcome: string;
+                  deliverables: string[];
+                  link: string;
+                }) => (
+                  <div key={c.title} className="card-surface flex flex-col p-7">
+                    <div className="tech-label">{c.index}</div>
+                    <h3 className="mt-3 font-display text-xl font-bold">{c.title}</h3>
+                    <p className="mt-2 text-sm text-ink-muted">{c.outcome}</p>
+                    <ul className="mt-5 flex-1 space-y-2.5">
+                      {(c.deliverables || []).map((d: string, i: number) => (
+                        <li key={i} className="flex gap-2.5 text-sm text-ink-muted">
+                          <span className="mt-2 h-1 w-1 flex-none rounded-full bg-accent" />
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={localHref(locale, c.link || "/services")}
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-brass"
+                    >
+                      <span>{t.services.linkLabel || "See services"}</span> →
+                    </Link>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
-              <div className="mt-8 flex flex-wrap gap-4">
+      {/* 8. Process — the Index-Method */}
+      {t.process && t.process.steps && (
+        <section className="border-t border-border bg-surface py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-12">
+              <div className="tech-label">{t.process.eyebrow}</div>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {t.process.headline} <span className="text-accent">{t.process.name}</span>
+              </h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {(t.process.steps as { n: string; title: string; body: string }[]).map(
+                (s, i) => (
+                  <div key={i} className="card-surface p-6">
+                    <div className="tech-label">{s.n}</div>
+                    <h3 className="mt-3 font-display text-lg font-bold">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{s.body}</p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 9. Trilingual advantage */}
+      {t.trilingual && (
+        <section className="border-t border-border bg-bg py-20">
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <div className="tech-label">{t.trilingual.eyebrow}</div>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+              {t.trilingual.headline}
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-relaxed text-ink-muted">
+              {t.trilingual.body}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 10. Founder strip */}
+      {t.founder && (
+        <section className="border-t border-border bg-surface py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div className="flex items-center gap-4 lg:flex-col lg:items-start">
+                <div className="tech-label">{t.founder.eyebrow}</div>
+                <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                  {t.founder.headline}
+                </h2>
+              </div>
+              <div>
+                <p className="text-[16px] leading-relaxed text-ink-muted">{t.founder.body}</p>
                 <Link
-                  href={`/${locale}/about`}
-                  className="rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                  href={localHref(locale, "/about")}
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-brass"
                 >
-                  {isAr ? "اقرأ بيان التأسيس" : "Read the Founder Manifesto"} →
+                  {t.founder.cta} →
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+      )}
 
-            {/* Right: Functional Interactive Terminal */}
-            <div>
-              <InteractiveTerminal locale={locale} />
+      {/* 11. Blog picks */}
+      {t.blog && t.blog.posts && (
+        <section className="border-t border-border bg-bg py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-10">
+              <div className="tech-label">{t.blog.eyebrow}</div>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {t.blog.headline}
+              </h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {(t.blog.posts as { title: string; desc: string; slug: string }[]).map(
+                (post, i) => (
+                  <Link
+                    key={i}
+                    href={localHref(locale, `/blog/${post.slug}`)}
+                    className="card-surface block p-7"
+                  >
+                    <h3 className="font-display text-xl font-bold">{post.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{post.desc}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-brass">
+                      Read → <WovenDivider className="hidden" />
+                    </span>
+                  </Link>
+                )
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 9. High-Converting Unified Final CTA */}
-      <section className="relative border-t border-white/10 bg-[#080a0d] py-28 text-center">
-        <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-          <div className="h-[350px] w-[500px] rounded-full bg-[#d4973b]/10 blur-[140px]" />
-        </div>
-
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-4 py-1 font-mono text-xs font-bold text-[#d4973b]">
-            <span>CONFIDENTIAL 48-HOUR DELIVERABLE</span>
+      {/* 12. FAQ */}
+      {t.faq && t.faq.items && (
+        <section className="border-t border-border bg-surface py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="text-center mb-10">
+              <div className="tech-label">{t.faq.eyebrow}</div>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {t.faq.headline}
+              </h2>
+            </div>
+            <div className="space-y-3">
+              {(t.faq.items as { q: string; a: string }[]).map((f, i) => (
+                <details key={i} className="card-surface p-5">
+                  <summary className="flex items-center justify-between gap-4 text-[15px] font-semibold text-ink">
+                    {f.q}
+                    <span className="font-mono text-accent">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
-          <h2 className="mt-6 font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        </section>
+      )}
+
+      {/* 13. Final CTA */}
+      <section className="relative border-t border-border bg-bg py-28 text-center">
+        <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+          <div className="h-[350px] w-[500px] rounded-full bg-accent/10 blur-[140px]" />
+        </div>
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="tech-label">{t.finalEyebrow || "Next step"}</div>
+          <h2 className="mt-6 font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink">
             {t.finalHeadline}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-slate-300">
+          <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-ink-muted">
             {t.finalSub}
           </p>
-
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <CtaButton href={`/${locale}/audit`}>
-              {t.finalCta}
-            </CtaButton>
+            <CtaButton href={`/${locale}/audit`}>{t.finalCta}</CtaButton>
             <Link
               href={`/${locale}/process`}
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-surface-hover px-8 py-3.5 text-sm font-semibold text-ink backdrop-blur-md transition hover:bg-surface-raised"
             >
-              {isAr ? "استكشف منهجية العمل" : "View 4-Phase Sprint Model"}
+              {isAr ? "استكشف منهجية العمل" : "See the method"}
             </Link>
           </div>
         </div>

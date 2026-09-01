@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
+import PageSchema from "@/components/PageSchema";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
@@ -25,7 +26,8 @@ export default async function ProcessPage({
   const t = dict.process;
 
   return (
-    <div className="bg-[#080a0d] text-[#f5f3ec]">
+    <div className="bg-bg text-ink">
+      <PageSchema locale={locale} relPath="/process" title={dict.process.meta.title} breadcrumb={[{ name: dict.process.meta.title?.split(" — ")[0] ?? "Process", relPath: "/process" }]} />
       <section className="relative overflow-hidden mx-auto max-w-6xl px-6 pt-24 pb-16">
         <div className="pointer-events-none absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-[#d4973b]/10 blur-[140px]" />
         <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">

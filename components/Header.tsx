@@ -20,17 +20,17 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
   const isAr = locale === "ar";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080a0d]/90 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Brand Logo & Name */}
         <Link href={`/${locale}`} className="group flex items-center gap-3">
-          <SeonidLogo className="h-8 w-8 text-[#d4973b] transition-transform group-hover:scale-105" />
+          <SeonidLogo className="h-8 w-8 text-accent transition-transform group-hover:scale-105" />
           <div className="flex flex-col leading-none">
             <span className="font-display text-[21px] font-bold tracking-tight">
-              <span className="text-white">SEO</span>
-              <span className="text-[#d4973b]">nid</span>
+              <span className="text-ink">SEO</span>
+              <span className="text-accent">nid</span>
             </span>
-            <span className="mt-0.5 text-[9px] uppercase tracking-[0.2em] text-slate-400 font-mono font-semibold">
+            <span className="mt-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-ink-faint">
               AGENCY &amp; LABS
             </span>
           </div>
@@ -66,59 +66,59 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
 
             {/* Dropdown Menu Box */}
             {openDropdown === "services" && (
-              <div className="absolute top-full left-0 z-[100] w-84 rounded-2xl border border-white/10 bg-[#0c0f14] p-3 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 z-[100] w-84 rounded-2xl border border-border bg-surface p-3 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
                 <Link
                   href={`/${locale}/services`}
-                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/[0.04]"
+                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface-hover"
                 >
-                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#d4973b]/10 border border-[#d4973b]/30 text-[#d4973b] font-mono font-bold text-xs">
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent-soft border border-accent/30 text-accent font-mono font-bold text-xs">
                     01
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Web Engineering</p>
-                    <p className="text-xs text-slate-400 mt-0.5">High-performance Next.js architectures & sub-second loads.</p>
+                    <p className="text-sm font-semibold text-ink">Web Engineering</p>
+                    <p className="text-xs text-ink-muted mt-0.5">High-performance Next.js architectures and sub-second loads.</p>
                   </div>
                 </Link>
 
                 <Link
                   href={`/${locale}/services`}
-                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/[0.04]"
+                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface-hover"
                 >
-                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#d4973b]/10 border border-[#d4973b]/30 text-[#d4973b] font-mono font-bold text-xs">
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent-soft border border-accent/30 text-accent font-mono font-bold text-xs">
                     02
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Technical & B2B SEO</p>
-                    <p className="text-xs text-slate-400 mt-0.5">JSON-LD entity graph, crawling hygiene & search domination.</p>
+                    <p className="text-sm font-semibold text-ink">Technical & B2B SEO</p>
+                    <p className="text-xs text-ink-muted mt-0.5">Crawl, index, schema, and the fixes that move rankings.</p>
                   </div>
                 </Link>
 
                 <Link
                   href={`/${locale}/geo`}
-                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/[0.04]"
+                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface-hover"
                 >
-                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#d4973b]/10 border border-[#d4973b]/30 text-[#d4973b] font-mono font-bold text-xs">
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent-soft border border-accent/30 text-accent font-mono font-bold text-xs">
                     03
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">GEO / AI Search Visibility</p>
-                    <p className="text-xs text-slate-400 mt-0.5">Get cited by ChatGPT & Perplexity, not just ranked.</p>
+                    <p className="text-sm font-semibold text-ink">GEO / AI Search Visibility</p>
+                    <p className="text-xs text-ink-muted mt-0.5">Get cited by ChatGPT and Perplexity, not just ranked.</p>
                   </div>
                 </Link>
 
                 <Link
                   href={`/${locale}/audit`}
-                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-[#d4973b]/10 border-t border-white/5 mt-1"
+                  className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-accent-soft border-t border-border mt-1"
                 >
-                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#d4973b] text-[#080a0d] font-bold text-xs">
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent text-bg font-bold text-xs">
                     ★
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-[#d4973b]">
+                    <p className="text-sm font-bold text-accent">
                       {isAr ? "ابدأ مشروعك" : "Start a Project"}
                     </p>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      {isAr ? "شاركنا متطلباتك واحصل على خطة تقنية" : "Project discovery intake & technical roadmap."}
+                    <p className="text-xs text-ink-muted mt-0.5">
+                      {isAr ? "شاركنا متطلباتك واحصل على خطة تقنية" : "Tell me what you need; get a technical roadmap."}
                     </p>
                   </div>
                 </Link>
@@ -153,23 +153,23 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
             </button>
 
             {openDropdown === "resources" && (
-              <div className="absolute top-full left-0 z-[100] w-84 rounded-2xl border border-white/10 bg-[#0c0f14] p-3 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 z-[100] w-84 rounded-2xl border border-border bg-surface p-3 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
                 <Link
                   href={`/${locale}/blog/12-agency-benchmark`}
-                  className="block rounded-xl p-3 transition-colors hover:bg-white/[0.04]"
+                  className="block rounded-xl p-3 transition-colors hover:bg-surface-hover"
                 >
-                  <p className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-[#d4973b]">Benchmark Report</p>
-                  <p className="text-sm font-semibold text-white mt-0.5">The 12 Moroccan Agency Audit</p>
-                  <p className="text-xs text-slate-400 mt-1">Real data exposing why 83% fail Core Web Vitals.</p>
+                  <p className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-accent">Benchmark Report</p>
+                  <p className="text-sm font-semibold text-ink mt-0.5">The 12 Moroccan Agency Audit</p>
+                  <p className="text-xs text-ink-muted mt-1">Real data exposing why 83% fail Core Web Vitals.</p>
                 </Link>
 
                 <Link
                   href={`/${locale}/blog/moroccan-b2b-seo-gap`}
-                  className="block rounded-xl p-3 transition-colors hover:bg-white/[0.04]"
+                  className="block rounded-xl p-3 transition-colors hover:bg-surface-hover"
                 >
-                  <p className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-[#d4973b]">Market Study</p>
-                  <p className="text-sm font-semibold text-white mt-0.5">The Moroccan B2B SEO Gap</p>
-                  <p className="text-xs text-slate-400 mt-1">Opportunity analysis for enterprise leaders.</p>
+                  <p className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-accent">Market Study</p>
+                  <p className="text-sm font-semibold text-ink mt-0.5">The Moroccan B2B SEO Gap</p>
+                  <p className="text-xs text-ink-muted mt-1">Opportunity analysis for enterprise leaders.</p>
                 </Link>
               </div>
             )}
@@ -200,7 +200,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
         {/* Right CTA & Locale Switcher */}
         <div className="flex items-center gap-3.5">
           {/* Language Switcher */}
-          <div className="flex items-center rounded-full border border-white/10 bg-white/[0.04] p-1 text-[11.5px] font-mono font-bold text-slate-400">
+          <div className="flex items-center rounded-full border border-border bg-surface-hover p-1 font-mono text-[11.5px] font-bold text-ink-faint">
             {locales.map((code) => (
               <Link
                 key={code}
@@ -209,8 +209,8 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
                 aria-current={code === locale ? "true" : undefined}
                 className={`rounded-full px-2.5 py-1 uppercase transition-all ${
                   code === locale
-                    ? "bg-[#d4973b] text-[#080a0d] shadow font-bold"
-                    : "hover:text-white"
+                    ? "bg-accent text-bg shadow font-bold"
+                    : "hover:text-ink"
                 }`}
               >
                 {code}
@@ -220,10 +220,10 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
 
           <Link
             href={`/${locale}/audit`}
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#d4973b] px-5 py-2.5 text-[13px] font-bold text-[#080a0d] shadow-lg shadow-[#d4973b]/20 transition-all hover:bg-[#e5ad58] hover:scale-[1.02] active:scale-[0.98]"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-[13px] font-bold text-bg shadow-lg shadow-accent/20 transition-all hover:bg-brass hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>{dict.nav.freeAudit}</span>
-            <span className="text-[#080a0d]/60">→</span>
+            <span className="text-bg/60">→</span>
           </Link>
 
           {/* Mobile Menu Hamburger */}
@@ -294,7 +294,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
               <Link
                 href={`/${locale}/audit`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-accent p-3 text-sm font-bold text-[#1a1206]"
+                className="flex w-full items-center justify-center rounded-xl bg-accent p-3 text-sm font-bold text-bg"
               >
                 {dict.nav.freeAudit}
               </Link>

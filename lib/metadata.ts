@@ -19,6 +19,7 @@ export function makeAlternates(locale: Locale, relPath = ""): NonNullable<Metada
       en: `${BASE}/en${relPath}`,
       fr: `${BASE}/fr${relPath}`,
       ar: `${BASE}/ar${relPath}`,
+      "x-default": `${BASE}/en${relPath}`, // EN is the default/fallback locale
     },
   };
 }

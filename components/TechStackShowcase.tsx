@@ -6,12 +6,12 @@ export default function TechStackShowcase({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
 
   const stack = [
-    { name: "Next.js 15", desc: "React SSR / Turbopack", tag: "Frontend Architecture" },
+    { name: "Next.js 16", desc: "React SSR / Turbopack", tag: "Frontend Architecture" },
     { name: "n8n Workflows", desc: "Agentic Multi-Node ETL", tag: "AI Orchestration" },
     { name: "OpenAI & Claude", desc: "Structured Tool-Calling LLMs", tag: "Model Inference" },
     { name: "Perplexity AI", desc: "GEO Semantic Indexing", tag: "Generative Search" },
     { name: "Supabase & Postgres", desc: "pgvector & Realtime State", tag: "Vector Database" },
-    { name: "Vercel Edge", desc: "Global Edge Network (<50ms)", tag: "Edge Infrastructure" },
+    { name: "Vercel Edge", desc: "Static-first, global delivery", tag: "Edge Infrastructure" },
   ];
 
   return (

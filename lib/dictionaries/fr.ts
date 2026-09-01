@@ -32,29 +32,101 @@ const fr: Dictionary = {
       "Seonid est un studio solo de design et d'automatisation dirigé par Abdelilah Karroumi. Nous concevons des plateformes web rapides et crédibles, optimisons votre visibilité sur Google et les moteurs d'IA, et automatisons vos opérations répétitives.",
     heroCtaPrimary: "Démarrer un projet",
     heroCtaSecondary: "Explorer les solutions",
+    // ---- Nouvelles sections marketing (voix honnête et méthodique) ----
+    problem: {
+      eyebrow: "Le problème",
+      headline: "8 sites B2B marocains sur 10 échouent dans leur croissance sur les moteurs de recherche.",
+      stat: "8 sur 10",
+      statDef:
+        "Parmi les sites B2B marocains que nous avons analysés, environ 8 sur 10 présentaient des blocages empêchant Google de les classer — temps de chargement lents, chemins de crawl cassés ou absence de stratégie d'indexation.",
+      pains: [
+        "Votre site charge lentement, et Google le pénalise avant même qu'un client n'arrive.",
+        "Google n'indexe jamais les pages sur lesquelles vous avez travaillé — votre meilleur travail reste invisible.",
+        "Vos meilleurs clients trouvent un concurrent qui ne le mérite pas, parce qu'il apparaît en premier.",
+      ],
+    },
+    proof: {
+      eyebrow: "Ce que contient l'audit gratuit",
+      headline: "L'audit technique en 14 points, sous 48 heures.",
+      points: [
+        { name: "Crawlabilité", body: "Google atteint-il réellement et lit-il vos pages ? Nous vérifions robots, liens internes et pages orphelines." },
+        { name: "Core Web Vitals", body: "LCP, CLS, INP mesurés en conditions réelles — les métriques qui décident de votre classement." },
+        { name: "Hreflang trilingue", body: "Vos pages FR, EN et AR correctement déclarées pour que chacune se classe dans sa langue." },
+        { name: "Indexation arabe", body: "Structure RTL correcte pour que les moteurs et modèles d'IA indexent et citent votre arabe." },
+      ],
+      cta: "Voir ce que contient l'audit",
+    },
+    services: {
+      eyebrow: "Ce que je fais",
+      headline: "Trois compétences, un seul ingénieur responsable.",
+      cards: [
+        {
+          index: "01",
+          title: "SEO technique & Performance",
+          outcome: "Faire classer le site que vous avez — crawl, indexation, Core Web Vitals et corrections de schéma.",
+          deliverables: ["Audit technique en 14 points", "Correction des Core Web Vitals", "Structure hreflang, schéma et mots-clés FR/AR"],
+          link: "/services",
+        },
+        {
+          index: "02",
+          title: "Conception & Construction Web",
+          outcome: "Lancement ou refonte sous budget de performance sous 2 secondes, avec structure trilingue dès le premier jour.",
+          deliverables: ["Build Next.js sous budget de performance", "Design sombre orienté conversion", "FR/EN/AR dès le départ, prêt RTL"],
+          link: "/services",
+        },
+        {
+          index: "03",
+          title: "IA & Automatisation",
+          outcome: "Être cité par ChatGPT et Perplexity, et automatiser les 30 % de tâches répétitives.",
+          deliverables: ["Structuration pour la recherche IA (GEO/AEO)", "Automatisation de workflows n8n", "Contenus qui répondent aux questions que vos acheteurs posent à l'IA"],
+          link: "/services",
+        },
+      ],
+      linkLabel: "Voir les services",
+    },
+    process: {
+      eyebrow: "Comment ça marche",
+      headline: "La ",
+      name: "Index-Method",
+      steps: [
+        { n: "01", title: "Audit", body: "Votre audit technique en 14 points, livré en 48 heures — crawlabilité, métriques, schéma, indexation FR/AR/EN." },
+        { n: "02", title: "Feuille de route", body: "Une liste de corrections priorisées avec tarification honnête, impact vs effort. Vous validez le périmètre avant tout travail." },
+        { n: "03", title: "Build & Rank", body: "La refonte performance et le SEO technique — structure de contenu trilingue incluse, suivi hebdomadaire." },
+        { n: "04", title: "Mesure", body: "Une page de chiffres, chacun défini et sourcé. Pas de gadgets de vanité, pas de surprises." },
+      ],
+    },
+    trilingual: {
+      eyebrow: "Français · Anglais · Arabe",
+      headline: "Un domaine. Trois langues. Un hreflang correct.",
+      body: "Vos clients internationaux vous trouvent dans leur langue — et ChatGPT aussi. Une structure trilingue correcte permet à vos pages FR, EN et AR de se classer chacune, au lieu d'un site français accompagné d'une page arabe que personne ne trouve.",
+    },
+    founder: {
+      eyebrow: "Qui construit cela",
+      headline: "Un ingénieur. Zéro intermédiaire.",
+      body: "SEONID, c'est Abdelilah Karroumi, architecte web fullstack à Casablanca. Je construis votre site, puis je fais le SEO technique qui le classe — en français, anglais et arabe. Pas de chargés de compte, pas de fantasme « 1 200 clients », pas de faux témoignages : si une technique fonctionne, je vous montre les données.",
+      cta: "Lire le manifeste du fondateur",
+    },
+    blog: {
+      eyebrow: "Depuis le blog",
+      headline: "La preuve par la réflexion, pas par les promesses.",
+      posts: [
+        { title: "Le Benchmark des 12 Agences", desc: "Ce que la comparaison de 12 sites d'agences marocaines révèle réellement.", slug: "12-agency-benchmark" },
+        { title: "Pourquoi 80 % des sites B2B marocains échouent sur Google", desc: "La recherche derrière notre approche — et pourquoi l'écart est gagnable.", slug: "moroccan-b2b-seo-gap" },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      headline: "Des réponses honnêtes.",
+      items: [
+        { q: "L'audit est-il vraiment gratuit ?", a: "Oui. Vous envoyez une URL, je lance l'audit technique en 14 points, et vous recevez un rapport en langage clair sous 48 heures. Sans paiement, sans réengagement, sans obligation." },
+        { q: "Pouvez-vous travailler sur mon site actuel, ou faut-il une refonte ?", a: "Les deux. L'audit vous le dira. Beaucoup de sites n'ont besoin que de corrections SEO techniques ; d'autres nécessitent une vraie refonte. Vous décidez après avoir vu le rapport." },
+        { q: "Dans quelles langues écrivez-vous les contenus ?", a: "Français, anglais et arabe — de vraies traductions par marché, avec hreflang et RTL corrects, pas de sortie machine." },
+        { q: "Quelle différence avec une agence de Casablanca ?", a: "Un ingénieur senior, pas une chaîne de juniors et de chargés de compte. Vous parlez à la personne qui écrit le code, et chaque chiffre d'un rapport est vérifiable." },
+        { q: "Combien cela coûte-t-il ?", a: "Honnêtement : l'audit est gratuit ; un engagement SEO technique ou une refonte est facturé par projet avec un périmètre clair et des jalons fixes. Demandez un devis précis après votre audit gratuit." },
+      ],
+    },
+    finalEyebrow: "Prochaine étape",
     processHeadline: "Quatre étapes pratiques du concept au système opérationnel.",
-    process: [
-      {
-        n: "01",
-        title: "Cadrage & Stratégie",
-        body: "Nous analysons vos objectifs, identifions les tâches manuelles chronophages et définissons un périmètre technique clair avec des étapes précises.",
-      },
-      {
-        n: "02",
-        title: "Conception Web Haute Confiance",
-        body: "Nous concevons des interfaces épurées et ultra-rapides conçues pour inspirer confiance et convertir vos visiteurs en prospects qualifiés.",
-      },
-      {
-        n: "03",
-        title: "Visibilité Recherche & IA (GEO)",
-        body: "Nous structurons vos données pour que les moteurs traditionnels et les modèles d'IA (ChatGPT, Perplexity) reconnaissent et citent votre marque.",
-      },
-      {
-        n: "04",
-        title: "Systèmes Automatisés (n8n)",
-        body: "Nous connectons votre site web à votre CRM, votre facturation et vos outils internes pour automatiser la gestion des prospects et les tâches répétitives.",
-      },
-    ],
     proofHeadline: "Conçu autour de quatre résultats concrets.",
     proofBody:
       "Pas d'intermédiaires superflus ni de frais d'agence opaques. Vous collaborez directement avec un ingénieur focalisé sur l'efficacité opérationnelle, de meilleurs leads et un gain de temps réel.",

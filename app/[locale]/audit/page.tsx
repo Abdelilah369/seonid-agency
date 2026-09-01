@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
+import PageSchema from "@/components/PageSchema";
 import AuditForm from "@/components/AuditForm";
 import LiveAuditScanner from "@/components/LiveAuditScanner";
 import { getDictionary } from "@/lib/dictionaries";
@@ -24,7 +25,9 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
   const t = dict.audit;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pt-16 pb-24">
+    <>
+      <PageSchema locale={locale} relPath="/audit" title={t.meta.title} />
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-24">
       {/* Header */}
       <div className="max-w-2xl">
         <p className="text-[13px] font-semibold uppercase tracking-[0.09em] text-accent-deep">
@@ -60,5 +63,6 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
         </div>
       </div>
     </section>
+    </>
   );
 }

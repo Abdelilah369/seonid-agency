@@ -70,8 +70,8 @@ export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }
       y: 80,
       description: isAr
         ? "ملخصات الذكاء الاصطناعي في أعلى نتائج بحث Google."
-        : "Dominates Google AI Overviews and top organic featured snippet positions.",
-      detail: "100% Valid JSON-LD Rich Results Schema with perfect breadcrumb nesting.",
+        : "Targeted for Google AI Overviews and featured-snippet visibility.",
+      detail: "JSON-LD entity graph: Organization, Service, FAQ, BreadcrumbList, Article — validated in Google Rich Results Test before launch.",
     },
     {
       id: "schema",
@@ -119,7 +119,7 @@ export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }
 
         <div className="flex items-center gap-2 font-mono text-xs text-slate-400 bg-black/40 px-4 py-2 rounded-full border border-white/5">
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>7 ACTIVE CITATION NODES</span>
+          <span>ENTITY GRAPH · 7 NODES</span>
         </div>
       </div>
 
@@ -247,8 +247,8 @@ export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }
           </div>
 
           <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500">
-            <span>Graph Health: 100%</span>
-            <span>Zero Hallucination Vector</span>
+            <span>Graph · 7 connected entities</span>
+            <span>Schema: Org · Service · FAQ · Breadcrumb</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* SEONID "Architectural Monolith" Palette */
+  /* SEONID "Architectural Monolith" Palette — tightened for precision */
   --bg: #080a0d;
   --surface: #0f1217;
   --surface-2: #151a22;
@@ -14,10 +14,17 @@
   --accent-deep: #b87b22;
   --accent-soft: rgba(212, 151, 59, 0.12);
   --brass: #e5ad58;
+  /* Precision additions (Linear-style luminance stepping on dark) */
+  --surface-hover: rgba(255, 255, 255, 0.04);
+  --surface-raised: rgba(255, 255, 255, 0.05);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --shadow-3: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+    /* dark-first brand: keep identical in light mode */
     --bg: #080a0d;
     --surface: #0f1217;
     --surface-2: #151a22;
@@ -30,6 +37,11 @@
     --accent-deep: #b87b22;
     --accent-soft: rgba(212, 151, 59, 0.12);
     --brass: #e5ad58;
+    --surface-hover: rgba(255, 255, 255, 0.04);
+    --surface-raised: rgba(255, 255, 255, 0.05);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    --shadow-3: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -37,6 +49,8 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-raised: var(--surface-raised);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-ink-faint: var(--ink-faint);
@@ -46,6 +60,9 @@
   --color-accent-soft: var(--accent-soft);
   --font-display: var(--font-bricolage);
   --font-body: var(--font-public-sans);
+  --shadow-1: var(--shadow-1);
+  --shadow-2: var(--shadow-2);
+  --shadow-3: var(--shadow-3);
 }
 
 [dir="rtl"] {
@@ -74,6 +91,45 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
+/* Display heading discipline: tight tracking, sentence case */
+.font-display {
+  letter-spacing: -0.02em;
+}
+h1, h2, h3, .font-display {
+  text-transform: none;
+}
+
+/* Precision card surface (Linear-style luminance step) */
+.card-surface {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.card-surface:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Mono technical label — 01 / 02 / 03 indices */
+.tech-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Accordion/footer detail trigger */
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 /* Brass & Amber Lighting Accents */
 .glow-amber {
   box-shadow: 0 0 40px -10px rgba(212, 151, 59, 0.25);
@@ -82,6 +138,15 @@ body {
 .border-brass-glow {
   border-color: rgba(212, 151, 59, 0.35);
   box-shadow: 0 0 25px -5px rgba(212, 151, 59, 0.15);
+}
+
+/* Gold panel — final CTA surface */
+.panel-gold {
+  background:
+    radial-gradient(1200px 500px at 20% 0%, rgba(212, 151, 59, 0.16), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 1rem;
 }
 
 /* Architectural Drafting Corner Mark */

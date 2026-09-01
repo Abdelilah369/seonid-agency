@@ -30,29 +30,101 @@ const en = {
       "Seonid is a solo design and automation studio run by Abdelilah Karroumi. We build fast, credible web platforms, optimize for Google and AI search, and automate repetitive operations so your business runs smoothly.",
     heroCtaPrimary: "Start a project",
     heroCtaSecondary: "Explore Solutions",
+    // ---- New marketing sections (honest, method-first voice) ----
+    problem: {
+      eyebrow: "The problem",
+      headline: "8 in 10 Moroccan B2B websites fail at search engine growth.",
+      stat: "8 in 10",
+      statDef:
+        "Of the Moroccan B2B websites we benchmarked, roughly 8 in 10 had issues that stopped Google from ranking them — slow load times, broken crawl paths, or no indexing strategy at all.",
+      pains: [
+        "Your site loads slowly, and Google punishes it before a single customer lands on it.",
+        "Google never indexes the pages you worked on — so your best work is invisible.",
+        "Your best customers find a competitor who doesn't deserve them, because they show up first.",
+      ],
+    },
+    proof: {
+      eyebrow: "What's inside the free audit",
+      headline: "The 14-point technical audit, in 48 hours.",
+      points: [
+        { name: "Crawlability", body: "Is Google actually reaching and reading your pages? We check robots, internal links, and orphan pages." },
+        { name: "Core Web Vitals", body: "LCP, CLS, INP measured on real conditions — the metrics that decide where you rank." },
+        { name: "Trilingual hreflang", body: "Your FR, EN and AR pages correctly declared so each ranks in its own language." },
+        { name: "Arabic indexing", body: "Proper RTL structure so Arabic searchers and AI models can index and cite you." },
+      ],
+      cta: "See what's inside the audit",
+    },
+    services: {
+      eyebrow: "What I do",
+      headline: "Three capabilities, one accountable engineer.",
+      cards: [
+        {
+          index: "01",
+          title: "Technical SEO & Performance",
+          outcome: "Make the site you have rank — crawl, index, Core Web Vitals, and schema fixes.",
+          deliverables: ["14-point technical audit", "Core Web Vitals remediation", "Hreflang, schema and Arabic/FR keyword structure"],
+          link: "/services",
+        },
+        {
+          index: "02",
+          title: "Web Design & Build",
+          outcome: "Rebuild or launch on a sub-2-second budget with trilingual structure from day one.",
+          deliverables: ["Next.js build to a performance budget", "Dark, conversion-focused design", "EN/FR/AR from the start, RTL ready"],
+          link: "/services",
+        },
+        {
+          index: "03",
+          title: "AI & Automation",
+          outcome: "Get cited by ChatGPT and Perplexity, and automate the repetitive 30%.",
+          deliverables: ["AI search (GEO/AEO) structuring", "n8n workflow automation", "Content that answers the questions your buyers ask AI"],
+          link: "/services",
+        },
+      ],
+      linkLabel: "See services",
+    },
+    process: {
+      eyebrow: "How it works",
+      headline: "The ",
+      name: "Index-Method",
+      steps: [
+        { n: "01", title: "Audit", body: "Your 14-point technical audit, delivered in 48 hours — crawlability, vitals, schema, Arabic/FR/EN indexation." },
+        { n: "02", title: "Roadmap", body: "A prioritized fix list with honest pricing, impact vs effort. You approve scope before any work." },
+        { n: "03", title: "Build & Rank", body: "The performance rebuild and technical SEO — trilingual content structure included, weekly progress notes." },
+        { n: "04", title: "Measure", body: "One page of numbers, each defined and sourced. No vanity widgets, no surprises." },
+      ],
+    },
+    trilingual: {
+      eyebrow: "French · English · Arabic",
+      headline: "One domain. Three languages. Correct hreflang.",
+      body: "Your international clients find you in their language, and so does ChatGPT. Proper trilingual structure means your FR, EN and AR pages each rank — instead of a French site plus an Arabic page nobody finds.",
+    },
+    founder: {
+      eyebrow: "Who's building this",
+      headline: "One engineer. Zero hand-offs.",
+      body: "SEONID is Abdelilah Karroumi, a fullstack web architect in Casablanca. I build your site, then do the technical SEO that makes it rank — in French, English and Arabic. No account managers, no '1,200 clients' fantasy, no fake testimonials: if a technique works I'll show you the data.",
+      cta: "Read the founder manifesto",
+    },
+    blog: {
+      eyebrow: "From the blog",
+      headline: "Proof of thinking, not promises.",
+      posts: [
+        { title: "The 12-Agency Benchmark", desc: "What comparing 12 Moroccan web agencies' online presence actually revealed.", slug: "12-agency-benchmark" },
+        { title: "Why 80% of Moroccan B2B Websites Fail at Search", desc: "The market research behind our approach — and why the gap is winnable.", slug: "moroccan-b2b-seo-gap" },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      headline: "Honest answers.",
+      items: [
+        { q: "Is the audit really free?", a: "Yes. You send a URL, I run the 14-point technical audit, and you get a plain-language report in 48 hours. No payment, no auto-renewal, no obligation." },
+        { q: "Can you work with my current site, or do I need a rebuild?", a: "Either. The audit tells you which. Many sites just need technical SEO fixes; others genuinely need a rebuild. You decide after seeing the report." },
+        { q: "Which languages do you write content in?", a: "French, English and Arabic — real translation per market, with correct hreflang and RTL handling, not machine output." },
+        { q: "How is this different from a Casablanca agency?", a: "One senior engineer, not a chain of juniors and account managers. You talk to the person writing the code, and every number on a report is checkable." },
+        { q: "What does it cost?", a: "Honestly: an audit is free; a technical SEO engagement or rebuild is priced per project with a clear scope and fixed milestones. Ask after your free audit for an exact quote." },
+      ],
+    },
+    finalEyebrow: "Next step",
     processHeadline: "Four practical steps from concept to running system.",
-    process: [
-      {
-        n: "01",
-        title: "Discovery & Scope",
-        body: "We clarify your business goals, identify manual bottlenecks, and map out a clear technical scope with fixed milestones.",
-      },
-      {
-        n: "02",
-        title: "High-Trust Web Design",
-        body: "We craft clean, ultra-fast web pages engineered to build credibility and turn visitors into qualified inbound leads.",
-      },
-      {
-        n: "03",
-        title: "Search & AI Visibility (GEO)",
-        body: "We structure your content so traditional search engines and AI models (ChatGPT, Perplexity) recognize and cite your brand.",
-      },
-      {
-        n: "04",
-        title: "Automated Systems (n8n)",
-        body: "We connect your website to your CRM, invoicing, and tools to replace repetitive admin with reliable digital systems.",
-      },
-    ],
     proofHeadline: "Engineered around four real business outcomes.",
     proofBody:
       "No bloated agency layers or vague retainer fees. You work directly with an engineer focused on tangible operational leverage, better leads, and real time savings.",

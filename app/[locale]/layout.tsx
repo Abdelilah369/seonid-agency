@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Public_Sans, Noto_Naskh_Arabic } from "next/font/g
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EntitySchema from "@/components/EntitySchema";
 import { isRtl, locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 
@@ -55,20 +56,6 @@ export default async function LocaleLayout({
   const dict = getDictionary(locale);
   const dir = isRtl(locale) ? "rtl" : "ltr";
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "SEONID AGENCY",
-    description: dict.home.meta.description,
-    url: "https://seonid.agency",
-    areaServed: ["Morocco", "MENA", "International"],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Casablanca",
-      addressCountry: "MA",
-    },
-  };
-
   return (
     <html
       lang={locale}
@@ -77,10 +64,7 @@ export default async function LocaleLayout({
       className={`${bricolage.variable} ${publicSans.variable} ${notoNaskhArabic.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-body">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <EntitySchema />
         <Header locale={locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />

@@ -47,20 +47,20 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6">
-        {/* Luxury Telemetry Status Strip */}
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4 font-mono text-[11.5px] text-slate-400">
+        {/* Honest Status Strip — no fake scarcity, verifiable claims only */}
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4 font-mono text-[11.5px] text-ink-faint">
           <div className="flex items-center gap-3">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-white font-semibold">STUDIO ACTIVE · CASABLANCA &amp; GLOBAL</span>
-            <span className="text-white/20">|</span>
+            <span className="text-ink font-semibold">CASABLANCA · WORKING WORLDWIDE</span>
+            <span className="text-ink-faint/40">|</span>
             <span>LOCAL: {timeStr}</span>
           </div>
 
           <div className="flex items-center gap-4 text-xs">
-            <span className="text-[#d4973b] font-bold">EDGE RTT: &lt;45ms</span>
-            <span className="text-white/20">|</span>
-            <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-slate-300">
-              Q2 COHORT: 2 PARTNER SLOTS OPEN
+            <span className="text-accent font-bold">3 LANGUAGES · EN / FR / AR</span>
+            <span className="text-ink-faint/40">|</span>
+            <span className="rounded-full bg-surface-hover border border-border px-2.5 py-0.5 text-ink-muted">
+              1 ENGINEER · 0 HAND-OFFS
             </span>
           </div>
         </div>
@@ -104,21 +104,21 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
               </Link>
             </div>
 
-            {/* Proof Badges Bar */}
-            <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6 text-[12.5px] text-slate-400">
+            {/* Honest Proof Strip — process/method numbers only, no fabricated client metrics */}
+            <div className="mt-12 flex flex-wrap items-center gap-5 border-t border-border pt-6 text-[12.5px] text-ink-muted">
               <div className="flex items-center gap-2">
-                <span className="font-mono text-sm font-bold text-[#d4973b]">12</span>
-                <span>Agencies Audited</span>
+                <span className="font-mono text-sm font-bold text-accent">3</span>
+                <span>Languages · EN/FR/AR</span>
               </div>
-              <span className="text-white/20">·</span>
+              <span className="text-ink-faint/40">·</span>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-sm font-bold text-[#d4973b]">&lt;0.75s</span>
-                <span>Core Web Vitals TTFB</span>
+                <span className="font-mono text-sm font-bold text-accent">14-pt</span>
+                <span>Technical audit</span>
               </div>
-              <span className="text-white/20">·</span>
+              <span className="text-ink-faint/40">·</span>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-sm font-bold text-[#d4973b]">48h</span>
-                <span>Diagnostic SLA</span>
+                <span className="font-mono text-sm font-bold text-accent">48h</span>
+                <span>Turnaround</span>
               </div>
             </div>
           </div>
@@ -146,33 +146,33 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080a0d] via-transparent to-[#080a0d]/30 opacity-60" />
 
-                {/* Floating Performance Score Pill */}
-                <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full border border-[#d4973b]/40 bg-black/85 px-3 py-1 font-mono text-xs font-bold text-[#d4973b] backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-[#d4973b] animate-pulse" />
-                  <span>CWV Score: 100/100</span>
+                {/* Method Label Pill — verifiable, not a fabricated score */}
+                <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-black/85 px-3 py-1 font-mono text-xs font-bold text-accent backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+                  <span>INDEX-METHOD</span>
                 </div>
 
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
-                  <span className="font-mono font-bold text-[#d4973b]">SEONID Architecture</span>
-                  <span className="font-mono text-[11px] text-slate-300 bg-black/60 px-2 py-0.5 rounded-full border border-white/10">
-                    4K Precision Loop
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-ink">
+                  <span className="font-mono font-bold text-accent">SEONID Architecture</span>
+                  <span className="font-mono text-[11px] text-ink-muted bg-black/60 px-2 py-0.5 rounded-full border border-border">
+                    Performance Budget
                   </span>
                 </div>
               </div>
 
-              {/* Technical Metrics Breakdown */}
+              {/* Technical Method Breakdown — process facts, not fabricated CWV scores */}
               <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
-                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
-                  <p className="font-mono font-bold text-[#d4973b] text-sm">0.65s</p>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">LCP Speed</p>
+                <div className="rounded-xl bg-surface-hover p-2.5 border border-border">
+                  <p className="font-mono font-bold text-accent text-sm">&lt; 2s</p>
+                  <p className="text-[10px] text-ink-muted uppercase tracking-wider mt-0.5">Load budget</p>
                 </div>
-                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
-                  <p className="font-mono font-bold text-emerald-400 text-sm">0.00</p>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">CLS Shift</p>
+                <div className="rounded-xl bg-surface-hover p-2.5 border border-border">
+                  <p className="font-mono font-bold text-emerald-400 text-sm">3</p>
+                  <p className="text-[10px] text-ink-muted uppercase tracking-wider mt-0.5">Languages</p>
                 </div>
-                <div className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
-                  <p className="font-mono font-bold text-white text-sm">Next.js 15</p>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Turbopack</p>
+                <div className="rounded-xl bg-surface-hover p-2.5 border border-border">
+                  <p className="font-mono font-bold text-ink text-sm">14-pt</p>
+                  <p className="text-[10px] text-ink-muted uppercase tracking-wider mt-0.5">Audit</p>
                 </div>
               </div>
             </div>
@@ -214,12 +214,12 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
               </video>
             </div>
 
-            <div className="flex items-center justify-between p-4 text-xs text-white/80">
-              <span className="font-mono font-bold text-[#d4973b]">SEONID Architecture · 1080p 60fps Master</span>
+            <div className="flex items-center justify-between p-4 text-xs text-ink-muted">
+              <span className="font-mono font-bold text-accent">SEONID Architecture Film · 720p · 10s loop</span>
               <Link
                 href={`/${locale}/audit`}
                 onClick={() => setVideoOpen(false)}
-                className="rounded-full bg-[#d4973b] px-5 py-2 font-bold text-[#080a0d] transition hover:bg-[#e5ad58]"
+                className="rounded-full bg-accent px-5 py-2 font-bold text-bg transition hover:bg-brass"
               >
                 {dict.nav.freeAudit}
               </Link>

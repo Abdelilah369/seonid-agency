@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
+import PageSchema from "@/components/PageSchema";
 import CtaButton from "@/components/CtaButton";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
@@ -25,7 +26,8 @@ export default async function ContactPage({
   const t = dict.contact;
 
   return (
-    <div className="bg-[#080a0d] min-h-[75vh] py-24 text-[#f5f3ec]">
+    <div className="bg-bg min-h-[75vh] py-24 text-ink">
+      <PageSchema locale={locale} relPath="/contact" title={dict.contact.meta.title} />
       <section className="relative overflow-hidden mx-auto max-w-6xl px-6">
         <div className="pointer-events-none absolute -top-32 right-0 -z-10 h-96 w-96 rounded-full bg-[#d4973b]/10 blur-[140px]" />
         <div className="inline-flex items-center gap-2 rounded-full border border-[#d4973b]/30 bg-[#d4973b]/10 px-3.5 py-1 font-mono text-xs font-bold text-[#d4973b]">
