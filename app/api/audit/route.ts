@@ -38,11 +38,13 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
-    // No email provider configured yet — accept the submission and log it
-    // server-side rather than failing the request. Set RESEND_API_KEY in
-    // the environment to start actually sending these.
-    console.log("[audit request — RESEND_API_KEY not set, email not sent]", { name, email, url, message });
-    return NextResponse.json({ ok: true });
+    // No email provider configured yet — fail loudly so the missing
+    // configuration is obvious rather than quietly swallowing leads.
+    console.error("[audit request — RESEND_API_KEY not set, email not sent]", { name, email, url, message });
+    return NextResponse.json(
+      { error: "Audit form is not connected to email yet. Please try again shortly." },
+      { status: 503 }
+    );
   }
 
   try {
