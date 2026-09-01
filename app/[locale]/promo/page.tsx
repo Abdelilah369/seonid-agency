@@ -64,7 +64,7 @@ export default async function PromoPage({
               poster="/images/hero-cinematic.jpg"
               className="h-full w-full object-contain"
             >
-              <source src="/promo/seonid_promo_cinematic.mp4" type="video/mp4" />
+              <source src="/promo/seonid_promo_cinematic_web.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -74,14 +74,14 @@ export default async function PromoPage({
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-xs font-bold text-emerald-400">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                1080p 60fps · FastStart Web
+                720p Web · FastStart
               </span>
-              <span className="text-xs text-slate-400 font-mono">35s · 7.6 MB</span>
+              <span className="text-xs text-slate-400 font-mono">10s · 1.5 MB</span>
             </div>
 
             <div className="flex items-center gap-3">
               <a
-                href="/promo/seonid_promo_cinematic.mp4"
+                href="/promo/seonid_promo_cinematic_web.mp4"
                 download="SEONID_Agency_Promo.mp4"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-mono font-bold text-white transition hover:bg-white/10"
               >

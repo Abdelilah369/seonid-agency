@@ -137,10 +137,11 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                   muted
                   loop
                   playsInline
+                  preload="metadata"
                   poster="/images/hero-luxury.jpg"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
-                  <source src="/videos/hero_architectural_loop.mp4" type="video/mp4" />
+                  <source src="/videos/hero_architectural_loop_web.mp4" type="video/mp4" />
                 </video>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080a0d] via-transparent to-[#080a0d]/30 opacity-60" />
@@ -204,10 +205,11 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                 autoPlay
                 controls
                 playsInline
+                preload="none"
                 className="h-full w-full object-contain"
                 poster="/images/hero-luxury.jpg"
               >
-                <source src="/videos/hero_architectural_loop.mp4" type="video/mp4" />
+                <source src="/videos/hero_architectural_loop_web.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

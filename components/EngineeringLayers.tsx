@@ -13,7 +13,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "01",
           name: "طبقة الحافة والأداء (Edge & Rendering)",
           tag: "Next.js 15 Turbopack",
-          video: "/videos/hero_glass_pavilion.mp4",
+          video: "/videos/hero_glass_pavilion_web.mp4",
           videoLabel: "مشهد 01 · بنية خوادم الحافة وسرعة الاستجابة",
           headline: "سرعة تحميل دون الثانية وضمان 100/100 Core Web Vitals",
           desc: "نقوم ببرمجة بنى رقمية نظيفة خالية من حشو القوالب الجاهزة. عرض من خوادم الحافة العالمية بزمن استجابة <45ms لضمان أعلى معدل تحويل وتجربة تصفح فورية.",
@@ -28,7 +28,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "02",
           name: "طبقة الرسم الدلالي ومحركات الـ AI (GEO Graph)",
           tag: "Schema & Vector Search",
-          video: "/videos/drone_modern_studio.mp4",
+          video: "/videos/drone_modern_studio_web.mp4",
           videoLabel: "مشهد 02 · استوديو الهندسة المعمارية والترسيخ الفيزيائي",
           headline: "تحويل المحتوى إلى بيانات مهيكلة تستشهد بها محركات ChatGPT و Perplexity",
           desc: "لم يعد تصدر Google كافياً إذا كانت نماذج الذكاء الاصطناعي لا تستشهد بك. نربط موقعك بـ JSON-LD Entity Graph متقدم يجعل نشاطك المرجع الأول عند الإجابة.",
@@ -43,7 +43,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "03",
           name: "طبقة الأتمتة والعمليات (Autonomous Pipelines)",
           tag: "n8n & Multi-Agent ETL",
-          video: "/videos/light_weaving_matrix.mp4",
+          video: "/videos/light_weaving_matrix_web.mp4",
           videoLabel: "مشهد 03 · مسار الأتمتة العصبية وتدفق البيانات الفوري",
           headline: "أتمتة العمليات اليومية ومزامنة الـ CRM دون تدخل بشري",
           desc: "بناء مسارات عمل ذاتية التشغيل تربط التقاط العملاء من الموقع مباشرة بـ CRM (HubSpot/Notion) وإرسال العروض والمقترحات آلياً وفورياً.",
@@ -60,7 +60,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "01",
           name: "Edge & Performance Layer",
           tag: "Next.js 15 Turbopack",
-          video: "/videos/hero_glass_pavilion.mp4",
+          video: "/videos/hero_glass_pavilion_web.mp4",
           videoLabel: "Scene 01 · Global Edge Architecture & Latency Control",
           headline: "Sub-second load times and 100/100 Core Web Vitals guaranteed",
           desc: "Custom headless architectures without bloated WordPress plugins. Global edge rendering with <45ms server response time ensures maximum conversion rates and instant page transitions.",
@@ -75,7 +75,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "02",
           name: "Semantic Graph & GEO Layer",
           tag: "Schema & Vector Search",
-          video: "/videos/drone_modern_studio.mp4",
+          video: "/videos/drone_modern_studio_web.mp4",
           videoLabel: "Scene 02 · Physical Studio Grounding & Architecture",
           headline: "Structured entity graphs engineered for ChatGPT & Perplexity citations",
           desc: "Ranking #1 on Google is no longer enough if AI search overviews overlook your brand. We build deep JSON-LD entity graphs that position your platform as the primary ground truth source for LLMs.",
@@ -90,7 +90,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           num: "03",
           name: "Autonomous Pipeline Layer",
           tag: "n8n & Multi-Agent ETL",
-          video: "/videos/light_weaving_matrix.mp4",
+          video: "/videos/light_weaving_matrix_web.mp4",
           videoLabel: "Scene 03 · Autonomous Neural Weave & Multi-Agent Pipelines",
           headline: "End-to-end workflow automation and zero-human-lag CRM dispatch",
           desc: "Production-grade n8n orchestrations that connect customer inquiries directly to CRM enrichment, automated proposal generation, and live notification channels without manual data entry.",
@@ -176,6 +176,8 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
               muted
               loop
               playsInline
+              preload="none"
+              poster="/images/hero-luxury.jpg"
               className="aspect-[16/10] w-full object-cover"
             >
               <source src={current.video} type="video/mp4" />

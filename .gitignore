@@ -46,3 +46,9 @@ next-env.d.ts
 
 # local automation scripts (WhatsApp lead outreach — contains sensitive session data)
 /scripts/
+
+# Original large videos — keep source local, deploy web-optimized only
+/public/videos/*.mp4
+!/public/videos/*_web.mp4
+/public/promo/*.mp4
+!/public/promo/*_web.mp4
