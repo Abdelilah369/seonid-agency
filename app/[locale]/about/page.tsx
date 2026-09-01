@@ -60,7 +60,7 @@ export default async function AboutPage({
             </div>
 
             <p className="mt-6 border-t border-white/5 pt-5 text-[14px] leading-relaxed text-slate-400">
-              {t.placeholder}
+              {t.bio}
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2 pt-2 text-[11px] font-mono font-semibold">

@@ -157,7 +157,7 @@ const en = {
     headline: "One Dedicated Specialist. Direct Communication. Real Outcomes.",
     p1: "Seonid is operated by Abdelilah Karroumi, a software engineer and solutions architect based in Casablanca, Morocco. Instead of passing your project through account managers, junior designers, and outsourced developers, you work directly with the person designing your architecture and building your automation workflows.",
     p2: "Our mission is straightforward: help Moroccan founders and growing businesses look credible online, capture qualified inbound leads, and save valuable hours each week by replacing repetitive manual tasks with simple digital systems.",
-    placeholder:
+    bio:
       "Based in Casablanca, Morocco, serving ambitious local and international businesses. We blend modern full-stack web engineering with practical AI automation to deliver real operational leverage.",
     ctaHeadline: "Want to explore how we can help your business?",
     cta: "Start a project",

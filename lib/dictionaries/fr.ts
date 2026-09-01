@@ -159,7 +159,7 @@ const fr: Dictionary = {
     headline: "Un spécialiste dédié. Un contact direct. Des résultats tangibles.",
     p1: "Seonid est dirigé par Abdelilah Karroumi, ingénieur logiciel et architecte de solutions à Casablanca, Maroc. Au lieu de diluer votre projet entre chefs de projet, graphistes juniors et prestataires externes, vous travaillez directement avec la personne qui conçoit vos pages et développe vos automatisations.",
     p2: "Notre mission est claire : aider les fondateurs marocains et les PME à renforcer leur crédibilité en ligne, capter des leads qualifiés et gagner du temps chaque semaine en transformant les tâches répétitives en systèmes autonomes.",
-    placeholder:
+    bio:
       "Basé à Casablanca, au Maroc, au service d'entrepreneurs locaux et internationaux. Nous combinons ingénierie web moderne et automatisation pragmatique pour offrir un véritable levier opérationnel.",
     ctaHeadline: "Envie d'échanger sur vos besoins ?",
     cta: "Démarrer un projet",
