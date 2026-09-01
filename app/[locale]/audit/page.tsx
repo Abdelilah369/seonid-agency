@@ -3,6 +3,7 @@ import WovenDivider from "@/components/WovenDivider";
 import AuditForm from "@/components/AuditForm";
 import LiveAuditScanner from "@/components/LiveAuditScanner";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -10,7 +11,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/audit">): Promise<Metadata> {
   const { locale } = (await params) as { locale: Locale };
   const dict = getDictionary(locale);
-  return { title: dict.audit.meta.title, description: dict.audit.meta.description };
+  return {
+    title: dict.audit.meta.title,
+    description: dict.audit.meta.description,
+    alternates: makeAlternates(locale, "/audit"),
+  };
 }
 
 export default async function AuditPage({ params }: PageProps<"/[locale]/audit">) {

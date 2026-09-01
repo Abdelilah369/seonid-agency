@@ -1,7 +1,22 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import { type Locale } from "@/lib/i18n";
 import WovenDivider from "@/components/WovenDivider";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Promo Film — SEONID AGENCY",
+    description: "The SEONID agency commercial film.",
+    alternates: makeAlternates(locale as Locale, "/promo"),
+  };
+}
 
 export default async function PromoPage({
   params,

@@ -3,6 +3,7 @@ import Link from "next/link";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -10,7 +11,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/blog">): Promise<Metadata> {
   const { locale } = (await params) as { locale: Locale };
   const dict = getDictionary(locale);
-  return { title: dict.blog.meta.title, description: dict.blog.meta.description };
+  return {
+    title: dict.blog.meta.title,
+    description: dict.blog.meta.description,
+    alternates: makeAlternates(locale, "/blog"),
+  };
 }
 
 export default async function BlogPage({

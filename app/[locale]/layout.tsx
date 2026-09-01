@@ -42,14 +42,8 @@ export async function generateMetadata({
       template: `%s — SEONID AGENCY`,
     },
     description: dict.home.meta.description,
-    alternates: {
-      canonical: `https://seonid.agency/${locale}`,
-      languages: {
-        'en': 'https://seonid.agency/en',
-        'fr': 'https://seonid.agency/fr',
-        'ar': 'https://seonid.agency/ar',
-      },
-    },
+    // NOTE: canonical + hreflang are set per-page via lib/metadata.ts
+    // (makeAlternates). Pages must not be forced dynamic by headers().
   };
 }
 

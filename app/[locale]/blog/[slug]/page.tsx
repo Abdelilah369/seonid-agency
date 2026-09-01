@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
 interface ArticleDetail {
@@ -253,6 +254,7 @@ export async function generateMetadata({
   return {
     title: `${article.title} — SEONID AGENCY`,
     description: article.summary,
+    alternates: makeAlternates(locale, `/blog/${slug}`),
   };
 }
 

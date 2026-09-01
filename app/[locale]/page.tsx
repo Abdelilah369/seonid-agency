@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
 import HeroFilm from "@/components/HeroFilm";
 import LiveAuditScanner from "@/components/LiveAuditScanner";
@@ -9,7 +10,20 @@ import CaseStudiesTeardown from "@/components/CaseStudiesTeardown";
 import UnifiedBenchmarkSuite from "@/components/UnifiedBenchmarkSuite";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale };
+  const dict = getDictionary(locale);
+  return {
+    title: dict.home.meta.title,
+    description: dict.home.meta.description,
+    alternates: makeAlternates(locale),
+  };
+}
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = (await params) as { locale: Locale };

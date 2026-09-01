@@ -4,6 +4,7 @@ import CtaButton from "@/components/CtaButton";
 import WovenDivider from "@/components/WovenDivider";
 import LuxuryPricingCalculator from "@/components/LuxuryPricingCalculator";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -11,7 +12,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/services">): Promise<Metadata> {
   const { locale } = (await params) as { locale: Locale };
   const dict = getDictionary(locale);
-  return { title: dict.services.meta.title, description: dict.services.meta.description };
+  return {
+    title: dict.services.meta.title,
+    description: dict.services.meta.description,
+    alternates: makeAlternates(locale, "/services"),
+  };
 }
 
 export default async function ServicesPage({

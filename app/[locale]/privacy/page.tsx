@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/privacy">): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale };
   return {
     title: "Privacy Policy — SEONID AGENCY",
     description: "Privacy policy and data protection practices at SEONID AGENCY.",
+    alternates: makeAlternates(locale, "/privacy"),
   };
 }
 

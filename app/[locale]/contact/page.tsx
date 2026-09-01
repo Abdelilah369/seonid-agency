@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
 import CtaButton from "@/components/CtaButton";
 import { getDictionary } from "@/lib/dictionaries";
+import { makeAlternates } from "@/lib/metadata";
 import type { Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -9,7 +10,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/contact">): Promise<Metadata> {
   const { locale } = (await params) as { locale: Locale };
   const dict = getDictionary(locale);
-  return { title: dict.contact.meta.title, description: dict.contact.meta.description };
+  return {
+    title: dict.contact.meta.title,
+    description: dict.contact.meta.description,
+    alternates: makeAlternates(locale, "/contact"),
+  };
 }
 
 export default async function ContactPage({
