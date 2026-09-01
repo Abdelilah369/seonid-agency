@@ -43,3 +43,6 @@ next-env.d.ts
 
 # agents
 .agents/
+
+# local automation scripts (WhatsApp lead outreach — contains sensitive session data)
+/scripts/
