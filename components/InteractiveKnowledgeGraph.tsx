@@ -150,7 +150,7 @@ export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }
             loop
             playsInline
             preload="none"
-            poster="/images/hero-luxury.jpg"
+            poster="/images/hero-luxury_web.jpg"
             className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-screen pointer-events-none"
           >
             <source src="/videos/light_weaving_matrix_web.mp4" type="video/mp4" />

@@ -86,7 +86,7 @@ export default async function AboutPage({
         <div className="mt-16 overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-2xl">
           <div className="relative aspect-[21/9] w-full overflow-hidden">
             <img
-              src="/images/hero-cinematic.jpg"
+              src="/images/hero-cinematic_web.jpg"
               alt="SEONID Agency Moroccan Architectural Studio"
               className="h-full w-full object-cover grayscale opacity-70 transition-transform duration-700 hover:scale-105"
             />

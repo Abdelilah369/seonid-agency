@@ -61,7 +61,7 @@ export default async function PromoPage({
               controls
               playsInline
               preload="auto"
-              poster="/images/hero-cinematic.jpg"
+              poster="/images/hero-cinematic_web.jpg"
               className="h-full w-full object-contain"
             >
               <source src="/promo/seonid_promo_cinematic_web.mp4" type="video/mp4" />

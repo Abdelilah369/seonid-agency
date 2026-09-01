@@ -177,7 +177,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
               loop
               playsInline
               preload="none"
-              poster="/images/hero-luxury.jpg"
+              poster="/images/hero-luxury_web.jpg"
               className="aspect-[16/10] w-full object-cover"
             >
               <source src={current.video} type="video/mp4" />

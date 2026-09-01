@@ -138,7 +138,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                   loop
                   playsInline
                   preload="metadata"
-                  poster="/images/hero-luxury.jpg"
+                  poster="/images/hero-luxury_web.jpg"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
                   <source src="/videos/hero_architectural_loop_web.mp4" type="video/mp4" />
@@ -207,7 +207,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                 playsInline
                 preload="none"
                 className="h-full w-full object-contain"
-                poster="/images/hero-luxury.jpg"
+                poster="/images/hero-luxury_web.jpg"
               >
                 <source src="/videos/hero_architectural_loop_web.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

@@ -52,3 +52,7 @@ next-env.d.ts
 !/public/videos/*_web.mp4
 /public/promo/*.mp4
 !/public/promo/*_web.mp4
+
+# Original hero images — deploy web-optimized only
+/public/images/hero-*.jpg
+!/public/images/*_web.jpg
