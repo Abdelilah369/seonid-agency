@@ -63,7 +63,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
             <span className="text-white/20">·</span>
             <Link href={`/${locale}/terms`} className="hover:text-[#d4973b] transition">Terms of Service</Link>
           </div>
-          <span className="font-mono text-[11px]">Next.js 15 · Turbopack · Global Edge</span>
+          <span className="font-mono text-[11px]">Next.js 16 · Turbopack · Global Edge</span>
         </div>
       </div>
     </footer>

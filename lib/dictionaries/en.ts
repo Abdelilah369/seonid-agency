@@ -131,7 +131,7 @@ const en = {
     proofStats: [
       { n: "Credibility", l: "Fast, custom websites that build immediate client trust" },
       { n: "Better Leads", l: "Structured for Google rankings & AI search citations" },
-      { n: "Time Saved", l: "Automated pipelines that eliminate repetitive daily busywork" },
+      { n: "Time Saved", l: "Automated pipelines that remove repetitive daily busywork" },
     ],
     proofLink: "Read our methodology →",
     servicesHeadline: "Core capabilities, engineered together.",
@@ -179,7 +179,7 @@ const en = {
     ],
     automationTitle: "AI & Workflow Automation",
     automation: [
-      "Custom n8n workflows that eliminate hours of repetitive admin work each week",
+      "Custom n8n workflows that remove hours of repetitive admin work each week",
       "Automated lead capture, instant CRM synchronization, and team notifications",
       "Automated invoice and document generation connected directly to your web forms",
       "Robust error handling and human-in-the-loop controls for complete operational reliability",
@@ -202,7 +202,7 @@ const en = {
     matrixHeadline: "The 4 Core Phases",
     criteria: [
       { name: "01. Discovery & Roadmap", weight: "Phase 1", body: "We define your target audience, core offer, and operational bottlenecks to build an actionable scope." },
-      { name: "02. Design & Architecture", weight: "Phase 2", body: "We craft credible UI designs and build an ultra-fast, responsive web foundation." },
+      { name: "02. Design & Architecture", weight: "Phase 2", body: "We design credible UI and build a fast, responsive web foundation." },
       { name: "03. Search & AI Optimization", weight: "Phase 3", body: "We integrate structured data and semantic markup so search engines and AI models cite your business." },
       { name: "04. Automation & Handover", weight: "Phase 4", body: "We build and test your n8n workflows, deploy live, and hand over complete system ownership." },
     ],
