@@ -6,6 +6,27 @@ const en = {
     blog: "Seonid Labs",
     contact: "Contact",
     freeAudit: "Start a project",
+    insights: "Insights",
+    menu: "Menu",
+    close: "Close menu",
+    // Services dropdown cards
+    srvWebTitle: "Web Engineering",
+    srvWebDesc: "Fast Next.js builds with a performance budget.",
+    srvSeoTitle: "Technical & B2B SEO",
+    srvSeoDesc: "Crawl, index, schema — fixes that move rankings.",
+    srvGeoTitle: "GEO / AI Search",
+    srvGeoDesc: "Get cited by ChatGPT & Perplexity.",
+    auditLink: "Start a project",
+    auditDesc: "Get a free 14-point technical roadmap.",
+    // Insights dropdown
+    insBenchTitle: "The 12-Agency Benchmark",
+    insBenchDesc: "Why 83% of Moroccan sites fail Core Web Vitals.",
+    insGapTitle: "The Moroccan B2B SEO Gap",
+    insGapDesc: "Opportunity analysis for enterprise leaders.",
+    insAllTitle: "All articles",
+    insAllDesc: "Research, teardowns and field notes.",
+    // Language
+    language: "Language",
   },
   footer: {
     tagline: "High-performance web design and AI automation for Moroccan founders, small businesses, and modern teams. Based in Casablanca, working worldwide.",

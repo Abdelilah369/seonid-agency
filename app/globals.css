@@ -58,6 +58,7 @@
   --color-accent: var(--accent);
   --color-accent-deep: var(--accent-deep);
   --color-accent-soft: var(--accent-soft);
+  --color-brass: var(--brass);
   --font-display: var(--font-bricolage);
   --font-body: var(--font-public-sans);
   --shadow-1: var(--shadow-1);
@@ -184,6 +185,26 @@ button:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+/* Reveal animations (dropdown / drawer) — reduced-motion safe */
+@keyframes dd-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-dd {
+  animation: dd-fade 0.16s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-dd {
+    animation: none;
+  }
 }
 
 /* Woven signature motif */
