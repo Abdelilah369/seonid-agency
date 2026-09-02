@@ -147,7 +147,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                   muted
                   loop
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   poster="/images/hero-luxury_web.jpg"
                   className="relative h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >

@@ -1,11 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/lib/i18n";
 
 export default function EngineeringLayers({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
   const [activeLayer, setActiveLayer] = useState(0);
+
+  // Scene video: don't fetch any video bytes until this section is actually visible
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const [videoInView, setVideoInView] = useState(false);
+  useEffect(() => {
+    const el = videoContainerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVideoInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const layers = isAr
     ? [
@@ -169,19 +188,29 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
           </div>
 
           {/* Right: Dedicated Veo 3 Video Scene Player for this Layer */}
-          <div className="relative overflow-hidden rounded-2xl border border-[#d4973b]/30 bg-black shadow-2xl">
-            <video
-              key={current.video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/images/hero-luxury_web.jpg"
-              className="aspect-[16/10] w-full object-cover"
-            >
-              <source src={current.video} type="video/mp4" />
-            </video>
+          <div ref={videoContainerRef} className="relative overflow-hidden rounded-2xl border border-[#d4973b]/30 bg-black shadow-2xl">
+            {videoInView ? (
+              <video
+                key={current.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/images/hero-luxury_web.jpg"
+                className="aspect-[16/10] w-full object-cover"
+              >
+                <source src={current.video} type="video/mp4" />
+              </video>
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src="/images/hero-luxury_web.jpg"
+                alt=""
+                aria-hidden="true"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            )}
 
             {/* HUD Status Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />

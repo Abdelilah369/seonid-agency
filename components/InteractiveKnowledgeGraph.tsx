@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/lib/i18n";
 
 interface Node {
@@ -16,6 +16,25 @@ interface Node {
 export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
   const [selectedNode, setSelectedNode] = useState<string>("root");
+
+  // Ambient background video: don't fetch it until this section is actually visible
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const [videoInView, setVideoInView] = useState(false);
+  useEffect(() => {
+    const el = videoContainerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVideoInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const nodes: Node[] = [
     {
@@ -142,19 +161,21 @@ export default function InteractiveKnowledgeGraph({ locale }: { locale: Locale }
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
         {/* Interactive Spatial Graph Canvas */}
-        <div className="relative aspect-[4/3] w-full rounded-2xl border border-white/10 bg-[#06080b] p-4 overflow-hidden">
-          {/* Subtle Ambient Video Background from Veo 3 */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            poster="/images/hero-luxury_web.jpg"
-            className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-          >
-            <source src="/videos/light_weaving_matrix_web.mp4" type="video/mp4" />
-          </video>
+        <div ref={videoContainerRef} className="relative aspect-[4/3] w-full rounded-2xl border border-white/10 bg-[#06080b] p-4 overflow-hidden">
+          {/* Subtle Ambient Video Background from Veo 3 — only loads once this section is in view */}
+          {videoInView && (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/images/hero-luxury_web.jpg"
+              className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-screen pointer-events-none"
+            >
+              <source src="/videos/light_weaving_matrix_web.mp4" type="video/mp4" />
+            </video>
+          )}
 
           {/* Subtle Grid Background */}
           <div className="absolute inset-0 bg-blueprint-grid opacity-30 pointer-events-none" />
