@@ -33,10 +33,11 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
     <section className="relative overflow-hidden bg-gradient-to-b from-[#080a0d] via-[#0c0f14] to-[#080a0d] py-16 sm:py-24 lg:py-28 text-white">
       <style>{`
         @keyframes floating-card {
-          0% { transform: translateY(0px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
-          50% { transform: translateY(-6px); box-shadow: 0 30px 50px -12px rgba(212, 151, 59, 0.2); }
-          100% { transform: translateY(0px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+          100% { transform: translateY(0px); }
         }
+        .gpu-accel { will-change: transform; transform: translateZ(0); }
       `}</style>
 
       {/* Luxury Ambient Mesh Background */}
@@ -127,7 +128,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
           <div className="relative" style={{ perspective: "1000px" }}>
             <div
               onClick={() => setVideoOpen(true)}
-              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-[#121720] via-[#0d1015] to-[#080a0d] p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-[#d4973b]/60 hover:shadow-[#d4973b]/15"
+              className="gpu-accel group relative cursor-pointer overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-[#121720] via-[#0d1015] to-[#080a0d] p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-[#d4973b]/60 hover:shadow-[#d4973b]/15"
               style={{ animation: "floating-card 8s ease-in-out infinite" }}
             >
               {/* Studio Visual Preview with Ambient Autoplay Video Loop */}
@@ -146,7 +147,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                   muted
                   loop
                   playsInline
-                  preload="none"
+                  preload="auto"
                   poster="/images/hero-luxury_web.jpg"
                   className="relative h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
@@ -214,7 +215,7 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
                 autoPlay
                 controls
                 playsInline
-                preload="none"
+                preload="metadata"
                 className="h-full w-full object-contain"
                 poster="/images/hero-luxury_web.jpg"
               >

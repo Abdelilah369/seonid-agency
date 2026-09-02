@@ -90,6 +90,7 @@ export default async function AboutPage({
             <img
               src="/images/hero-cinematic_web.jpg"
               alt="SEONID Agency Moroccan Architectural Studio"
+              loading="lazy"
               className="h-full w-full object-cover grayscale opacity-70 transition-transform duration-700 hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#080a0d] via-black/40 to-transparent" />

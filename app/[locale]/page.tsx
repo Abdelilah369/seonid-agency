@@ -1,12 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import CtaButton from "@/components/CtaButton";
-import HeroFilm from "@/components/HeroFilm";
-import LiveAuditScanner from "@/components/LiveAuditScanner";
-import EngineeringLayers from "@/components/EngineeringLayers";
-import TechStackShowcase from "@/components/TechStackShowcase";
-import InteractiveKnowledgeGraph from "@/components/InteractiveKnowledgeGraph";
 import WovenDivider from "@/components/WovenDivider";
+import {
+  HeroFilm,
+  LiveAuditScanner,
+  EngineeringLayers,
+  TechStackShowcase,
+  InteractiveKnowledgeGraph,
+} from "@/components/ClientLazies";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
 import { faqSchema } from "@/lib/jsonld";

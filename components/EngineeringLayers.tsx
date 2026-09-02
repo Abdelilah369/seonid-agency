@@ -176,7 +176,7 @@ export default function EngineeringLayers({ locale }: { locale: Locale }) {
               muted
               loop
               playsInline
-              preload="none"
+              preload="metadata"
               poster="/images/hero-luxury_web.jpg"
               className="aspect-[16/10] w-full object-cover"
             >
