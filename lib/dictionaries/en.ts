@@ -261,9 +261,11 @@ const en = {
       submitting: "Submitting...",
       doneTitle: "Inquiry Received.",
       doneBody: "We'll review your project details and get back to you within 24 hours with next steps.",
-      genericError: "Something went wrong. Please try again.",
+      genericError: "Something went wrong sending that through the site form.",
       requiredError: "Email is required.",
       emailError: "Please enter a valid email address.",
+      fallbackIntro: "Not a blocker — open your mail app instead and the details will be pre-filled:",
+      fallbackLink: "send it directly to hello@seonid.agency",
     },
   },
   blog: {

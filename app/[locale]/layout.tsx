@@ -45,6 +45,21 @@ export async function generateMetadata({
     description: dict.home.meta.description,
     // NOTE: canonical + hreflang are set per-page via lib/metadata.ts
     // (makeAlternates). Pages must not be forced dynamic by headers().
+    openGraph: {
+      type: "website",
+      siteName: "SEONID AGENCY",
+      title: dict.home.meta.title,
+      description: dict.home.meta.description,
+      locale,
+      url: `https://seonid.agency/${locale}/`,
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.home.meta.title,
+      description: dict.home.meta.description,
+      images: ["/opengraph-image"],
+    },
   };
 }
 

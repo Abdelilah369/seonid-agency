@@ -9,6 +9,7 @@ import InteractiveKnowledgeGraph from "@/components/InteractiveKnowledgeGraph";
 import WovenDivider from "@/components/WovenDivider";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
+import { faqSchema } from "@/lib/jsonld";
 import type { Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -273,6 +274,17 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       {/* 12. FAQ */}
       {t.faq && t.faq.items && (
         <section className="border-t border-border bg-surface py-20">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                faqSchema(
+                  locale,
+                  (t.faq.items as { q: string; a: string }[]) || []
+                )
+              ),
+            }}
+          />
           <div className="mx-auto max-w-3xl px-6">
             <div className="text-center mb-10">
               <div className="tech-label">{t.faq.eyebrow}</div>

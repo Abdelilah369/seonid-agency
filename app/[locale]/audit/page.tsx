@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import WovenDivider from "@/components/WovenDivider";
 import PageSchema from "@/components/PageSchema";
 import AuditForm from "@/components/AuditForm";
+import AuditChecklist from "@/components/AuditChecklist";
 import LiveAuditScanner from "@/components/LiveAuditScanner";
 import { getDictionary } from "@/lib/dictionaries";
 import { makeAlternates } from "@/lib/metadata";
@@ -62,6 +63,9 @@ export default async function AuditPage({ params }: PageProps<"/[locale]/audit">
           <AuditForm t={t.form} />
         </div>
       </div>
+
+      {/* Free 14-point audit checklist — lead magnet */}
+      <AuditChecklist locale={locale} />
     </section>
     </>
   );

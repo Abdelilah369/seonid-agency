@@ -132,14 +132,23 @@ export default function HeroFilm({ locale, dict }: { locale: Locale; dict: Dicti
             >
               {/* Studio Visual Preview with Ambient Autoplay Video Loop */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 bg-black">
+                {/* Poster as the LCP <img> — high priority, tiny, so LCP is fast */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/hero-luxury_web.jpg"
+                  alt=""
+                  aria-hidden="true"
+                  fetchPriority="high"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   poster="/images/hero-luxury_web.jpg"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="relative h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
                   <source src="/videos/hero_architectural_loop_web.mp4" type="video/mp4" />
                 </video>

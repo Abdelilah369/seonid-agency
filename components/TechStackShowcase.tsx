@@ -1,5 +1,3 @@
-"use client";
-
 import type { Locale } from "@/lib/i18n";
 
 export default function TechStackShowcase({ locale }: { locale: Locale }) {

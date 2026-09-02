@@ -92,6 +92,16 @@ export function baseEntityGraph() {
       },
     },
     {
+      "@type": "Person",
+      "@id": `${BASE}/#founder`,
+      name: "Abdelilah Karroumi",
+      jobTitle: "Principal Solutions Architect",
+      worksFor: { "@id": `${BASE}/#organization` },
+      founderOf: { "@id": `${BASE}/#organization` },
+      sameAs: ["https://www.linkedin.com/in/abdelilah-karroumi-consultant"],
+      url: `${BASE}/about/`,
+    },
+    {
       "@type": "WebSite",
       "@id": `${BASE}/#website`,
       name: orgName,
@@ -142,6 +152,20 @@ export function pageEntityGraph(p: PageRef, homeLabel = "Home") {
 /** Full graph for a page: base entities + page nodes. */
 export function pageGraph(p: PageRef, homeLabel = "Home") {
   return [...baseEntityGraph(), ...pageEntityGraph(p, homeLabel)];
+}
+
+/** FAQPage schema — makes the homepage FAQ eligible for Google rich results. */
+export function faqSchema(locale: Locale, items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+    inLanguage: locale,
+  };
 }
 
 /** Victorious-grade Article schema for blog posts (author/publisher = org). */

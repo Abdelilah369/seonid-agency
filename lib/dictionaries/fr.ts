@@ -263,9 +263,11 @@ const fr: Dictionary = {
       submitting: "Envoi en cours…",
       doneTitle: "Demande bien reçue.",
       doneBody: "Nous examinerons vos informations et vous recontacterons sous 24 heures avec les prochaines étapes.",
-      genericError: "Une erreur est survenue. Veuillez réessayer.",
+      genericError: "Une erreur est survenue lors de l'envoi via le formulaire.",
       requiredError: "L'adresse email est requise.",
       emailError: "L'adresse email ne semble pas valide.",
+      fallbackIntro: "Pas un blocage — ouvrez votre messagerie et les détails seront pré-remplis :",
+      fallbackLink: "envoyez-les directement à hello@seonid.agency",
     },
   },
   blog: {

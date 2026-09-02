@@ -6,6 +6,7 @@ import type { Dictionary } from "@/lib/dictionaries";
 export default function AuditForm({ t }: { t: Dictionary["audit"]["form"] }) {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fallbackMailto, setFallbackMailto] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -33,7 +34,15 @@ export default function AuditForm({ t }: { t: Dictionary["audit"]["form"] }) {
       setStatus("done");
     } catch (err) {
       setStatus("error");
+      // Capture the values for a mailto fallback so the lead is never lost,
+      // even if the email backend is down.
       setErrorMsg(err instanceof Error ? err.message : t.genericError);
+      const fallback = `mailto:hello@seonid.agency?subject=${encodeURIComponent(
+        `[Audit] ${payload.name} — ${payload.url}`
+      )}&body=${encodeURIComponent(
+        `Name: ${payload.name}\nEmail: ${payload.email}\nWebsite: ${payload.url}\n\n${payload.message || ""}`
+      )}`;
+      setFallbackMailto(fallback);
     }
   }
 
@@ -93,9 +102,22 @@ export default function AuditForm({ t }: { t: Dictionary["audit"]["form"] }) {
       </label>
 
       {status === "error" && (
-        <p className="text-[13.5px] text-red-600" role="alert">
-          {errorMsg}
-        </p>
+        <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4">
+          <p className="text-[13.5px] text-red-600" role="alert">
+            {errorMsg}
+          </p>
+          {fallbackMailto && (
+            <p className="mt-3 text-[13.5px] leading-relaxed text-ink-muted">
+              {t.fallbackIntro}{" "}
+              <a
+                href={fallbackMailto}
+                className="font-semibold text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent"
+              >
+                {t.fallbackLink}
+              </a>
+            </p>
+          )}
+        </div>
       )}
 
       <button
