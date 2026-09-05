@@ -4,6 +4,7 @@ const fr: Dictionary = {
   nav: {
     services: "Services",
     process: "Notre méthode",
+    shop: "Produits numériques",
     about: "À propos",
     blog: "Seonid Labs",
     contact: "Contact",
@@ -345,6 +346,47 @@ const fr: Dictionary = {
     ctaHeadline: "Prêt à optimiser votre visibilité pour les moteurs d'IA ?",
     cta: "Démarrer un projet",
   },
+  shop: {
+    meta: {
+      title: "Produits numériques — SEONID",
+      description: "Produits numériques prêts à l'emploi signés SEONID : un kit de démarrage de site web pour commerce local et un guide d'automatisation IA. Téléchargement instantané.",
+    },
+    eyebrow: "Produits numériques",
+    headline: "Achetez les outils, sautez l'attente.",
+    intro: "Deux choses issues directement de notre travail client : un template de site que vous pouvez lancer aujourd'hui, et le guide d'automatisation que nous utilisons pour mettre en place des systèmes IA pour les commerces locaux. Téléchargement immédiat, aucun délai de projet.",
+    products: [
+      {
+        name: "Local Business Starter Kit",
+        tagline: "Un template Next.js rapide et prêt pour le SEO",
+        description: "La même stack que nous utilisons pour nos clients — Next.js, TypeScript, Tailwind — généralisée en un template à personnaliser depuis un seul fichier. Lancez un vrai site pour commerce local dès aujourd'hui.",
+        price: "49 $",
+        features: [
+          "Next.js 15 + TypeScript + Tailwind CSS v4",
+          "Un seul fichier de configuration pour nom, téléphone, WhatsApp, services",
+          "Schéma LocalBusiness intégré automatiquement",
+          "Déployable partout où Next.js fonctionne",
+        ],
+        buyLabel: "Acheter le starter kit — 49 $",
+      },
+      {
+        name: "AI Automation Playbook",
+        tagline: "Chatbots, automatisation WhatsApp, prompts prêts à l'emploi",
+        description: "La méthode exacte que nous utilisons pour mettre en place des systèmes IA pour les commerces locaux : flux de chatbot, bases de l'automatisation WhatsApp, et une bibliothèque de prompts pour la prise de rendez-vous, les FAQ et la capture de leads.",
+        price: "29 $",
+        features: [
+          "Comparatif de plateformes de chatbot et 4 flux essentiels",
+          "Configuration WhatsApp Business + mots-clés déclencheurs",
+          "6 prompts prêts à l'emploi, à copier dès aujourd'hui",
+          "Une checklist de lancement qui évite l'erreur la plus fréquente",
+        ],
+        buyLabel: "Acheter le guide — 29 $",
+      },
+    ],
+    noteHeadline: "Besoin de quelque chose sur mesure ?",
+    note: "Ce sont des produits en libre-service. Si vous voulez un site conçu et optimisé pour votre activité spécifique, c'est un projet sur devis.",
+    noteCta: "Démarrer un projet",
+  },
+
 };
 
 export default fr;

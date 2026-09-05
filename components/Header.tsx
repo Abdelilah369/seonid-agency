@@ -189,6 +189,9 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
           <NavLink href={`/${locale}/process`} active={isActive("/process")}>
             {n.process}
           </NavLink>
+          <NavLink href={`/${locale}/shop`} active={isActive("/shop")}>
+            {n.shop}
+          </NavLink>
           <NavLink href={`/${locale}/about`} active={isActive("/about")}>
             {n.about}
           </NavLink>
@@ -243,6 +246,9 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
               </MobileLink>
               <MobileLink href={`/${locale}/process`} onClose={closeMobile}>
                 {n.process}
+              </MobileLink>
+              <MobileLink href={`/${locale}/shop`} onClose={closeMobile}>
+                {n.shop}
               </MobileLink>
               <MobileLink href={`/${locale}/about`} onClose={closeMobile}>
                 {n.about}

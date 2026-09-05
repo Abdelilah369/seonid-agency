@@ -2,6 +2,7 @@ const en = {
   nav: {
     services: "Services",
     process: "How We Work",
+    shop: "Digital Products",
     about: "About",
     blog: "Seonid Labs",
     contact: "Contact",
@@ -346,6 +347,47 @@ const en = {
     ctaHeadline: "Ready to optimize your brand for AI search visibility?",
     cta: "Start a project",
   },
+  shop: {
+    meta: {
+      title: "Digital Products — SEONID",
+      description: "Ready-to-use digital products from SEONID: a local business website starter kit and an AI automation playbook. Instant download.",
+    },
+    eyebrow: "Digital Products",
+    headline: "Buy the tools, skip the wait.",
+    intro: "Two things we've packaged from our own client work: a website template you can launch today, and the automation playbook we use to set up AI systems for local businesses. Instant download, no project timeline.",
+    products: [
+      {
+        name: "Local Business Starter Kit",
+        tagline: "A fast, SEO-ready Next.js template",
+        description: "The same stack we use for client sites — Next.js, TypeScript, Tailwind — generalized into a one-file-to-rebrand template. Launch a real local-business website today.",
+        price: "$49",
+        features: [
+          "Next.js 15 + TypeScript + Tailwind CSS v4",
+          "One config file for name, phone, WhatsApp, services",
+          "LocalBusiness schema wired in automatically",
+          "Deploy anywhere Next.js runs",
+        ],
+        buyLabel: "Buy the starter kit — $49",
+      },
+      {
+        name: "AI Automation Playbook",
+        tagline: "Chatbots, WhatsApp automation, ready-to-use prompts",
+        description: "The exact method we use to set up AI systems for local businesses: chatbot flows, WhatsApp automation basics, and a prompt library for booking, FAQs, and lead capture.",
+        price: "$29",
+        features: [
+          "Chatbot platform comparison and 4 core flows",
+          "WhatsApp Business setup + keyword triggers",
+          "6 ready-to-use prompts you can copy today",
+          "A rollout checklist that avoids the most common mistake",
+        ],
+        buyLabel: "Buy the playbook — $29",
+      },
+    ],
+    noteHeadline: "Need something custom instead?",
+    note: "These are self-serve products. If you want a website built and optimized for your specific business, that's project work.",
+    noteCta: "Start a project",
+  },
+
 };
 
 export default en;
